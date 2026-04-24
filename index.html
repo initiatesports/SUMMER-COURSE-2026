@@ -158,6 +158,45 @@
   .t-navy   .cta-btn { background: linear-gradient(135deg, #2a50a0, #0a1840); }
   .cta-note { font-size: 12px; color: #999; margin-top: 8px; }
 
+  /* Quota / Progress bar */
+  .quota-wrap { margin: 20px 0 4px; }
+  .quota-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-size: 13px; }
+  .quota-label { font-weight: 700; color: #333; }
+  .quota-status { font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 20px; }
+  .quota-status.open    { background: #e6f5ec; color: #1a8a4a; }
+  .quota-status.half    { background: #fff4e0; color: #b46800; }
+  .quota-status.almost  { background: #fdf0ee; color: #b42814; }
+  .quota-status.full    { background: #f0f0f0; color: #555; }
+  .quota-status.formed  { background: #e6f5ec; color: #1a8a4a; }
+  .progress-track { height: 12px; background: #eee; border-radius: 10px; overflow: hidden; }
+  .progress-bar { height: 100%; border-radius: 10px; transition: width 0.6s ease; }
+  .progress-bar.open   { background: linear-gradient(90deg, #1aaa60, #34d380); }
+  .progress-bar.half   { background: linear-gradient(90deg, #f09820, #f8c040); }
+  .progress-bar.almost { background: linear-gradient(90deg, #e03c1e, #f07050); }
+  .progress-bar.full   { background: #aaa; }
+  .quota-counts { font-size: 12px; color: #888; margin-top: 5px; text-align: right; }
+  .quota-min-note { font-size: 11px; color: #aaa; margin-top: 2px; }
+
+  /* Private training theme */
+  .t-gold .course-header { background: linear-gradient(135deg, #c89020 0%, #7a5000 100%); }
+  .t-gold .time-slot { background: #fdf8e8; border-color: #e8d090; }
+  .t-gold .slot-day { color: #a07010; }
+  .t-gold .cta-btn { background: linear-gradient(135deg, #c89020, #7a5000); }
+
+  /* Private training pricing cards */
+  .pt-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 4px; }
+  .pt-card { border-radius: 12px; padding: 16px; border: 2px solid var(--border); text-align: center; position: relative; cursor: default; transition: transform 0.15s, box-shadow 0.15s; }
+  .pt-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
+  .pt-card.featured { border-color: #c89020; background: linear-gradient(135deg, #fffbf0, #fef5d0); }
+  .pt-card .pt-badge { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: #c89020; color: white; font-size: 10px; font-weight: 800; padding: 2px 10px; border-radius: 20px; white-space: nowrap; }
+  .pt-card .pt-sessions { font-size: 22px; font-weight: 900; color: #222; margin-bottom: 2px; }
+  .pt-card .pt-total { font-size: 20px; font-weight: 800; color: #c89020; margin-bottom: 2px; }
+  .pt-card .pt-per { font-size: 12px; color: #888; margin-bottom: 6px; }
+  .pt-card .pt-expiry { font-size: 11px; color: #aaa; border-top: 1px solid #eee; padding-top: 6px; margin-top: 6px; }
+  .pt-trial { background: #f0faf4; border: 2px dashed #1a8a4a; border-radius: 12px; padding: 14px 16px; text-align: center; margin-bottom: 16px; }
+  .pt-trial .trial-price { font-size: 24px; font-weight: 900; color: #1a8a4a; }
+  .pt-trial .trial-note { font-size: 12px; color: #888; margin-top: 2px; }
+
   /* Footer */
   .site-footer { background: #1a2240; color: white; text-align: center; padding: 32px 16px; font-size: 14px; line-height: 1.8; }
   .site-footer .wa { font-size: 22px; font-weight: 800; color: #4cde80; }
@@ -195,6 +234,7 @@
     <div class="nav-tab" onclick="show('bad',this,'#006b7a')">🏸 羽毛球</div>
     <div class="nav-tab" onclick="show('pkl',this,'#4a7c2f')">🏏 匹克球</div>
     <div class="nav-tab" onclick="show('bball',this,'#1a3060')">🏀 籃球</div>
+    <div class="nav-tab" onclick="show('pt',this,'#c89020')">⭐ 私人訓練</div>
   </div>
 </div>
 
@@ -214,6 +254,7 @@
       <div class="info-card"><div class="label">每節時間</div><div class="value">1 小時</div></div>
       <div class="info-card"><div class="label">課堂節數</div><div class="value">全期 7 節</div></div>
     </div>
+
     <div class="sec-title">📍 上課地點</div>
     <div class="venue-box">
       <div class="venue-main">青衣區體育館</div>
@@ -226,6 +267,11 @@
       <div class="time-slot"><div class="slot-header"><span class="slot-day">星期三班</span><span class="slot-time">11:00–12:00</span></div><div class="slot-dates"><span class="date-badge">7/15</span><span class="date-badge">7/22</span><span class="date-badge">7/29</span><span class="date-badge">8/5</span><span class="date-badge">8/12</span><span class="date-badge">8/19</span><span class="date-badge">8/26</span></div></div>
       <div class="time-slot"><div class="slot-header"><span class="slot-day">星期四班</span><span class="slot-time">14:00–15:00</span></div><div class="slot-dates"><span class="date-badge">7/16</span><span class="date-badge">7/23</span><span class="date-badge">7/30</span><span class="date-badge">8/6</span><span class="date-badge">8/13</span><span class="date-badge">8/20</span><span class="date-badge">8/27</span></div></div>
     </div>
+    <div class="sec-title">📊 班別名額</div>
+    <div id="quota-jump-mon" class="quota-wrap" data-enrolled="0" data-max="12" data-min="4" data-label="星期一班"></div>
+    <div id="quota-jump-tue" class="quota-wrap" data-enrolled="0" data-max="12" data-min="4" data-label="星期二班"></div>
+    <div id="quota-jump-wed" class="quota-wrap" data-enrolled="0" data-max="12" data-min="4" data-label="星期三班"></div>
+    <div id="quota-jump-thu" class="quota-wrap" data-enrolled="0" data-max="12" data-min="4" data-label="星期四班"></div>
     <div class="sec-title">💰 學費（全期7節 / 每人）</div>
     <table class="price-table">
       <thead><tr><th>報名期</th><th>1人報名</th><th>2人同行 95折</th><th>3人或以上 9折</th></tr></thead>
@@ -243,7 +289,7 @@
       <li><span class="gift-icon">🍶</span><span>報兩班或以上額外送 <strong>獨家運動水樽</strong>（價值 $108）</span></li>
     </ul>
     <div class="cta-wrap">
-      <a class="cta-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfyPxJje5wg-wJBtBbHGaipWOc2uslwDb7kpE8w_mFfla7pPQ/viewform?usp=header" target="_blank">📝 立即報名</a>
+      <a class="cta-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfyPxJje5wg-wJBtBbHGaipWOc2uslwDb7kpE8w_mFfla7pPQ/viewform?usp=header" target="_blank" style="background:linear-gradient(135deg,#2060d0,#0a3080)">📝 立即報名</a>
       <div class="cta-note">點擊後將跳至 Google 表格報名頁面</div>
     </div>
   </div>
@@ -273,6 +319,9 @@
       <div class="time-slot"><div class="slot-header"><span class="slot-day">星期一班</span><span class="slot-time">14:00–15:00</span></div><div class="slot-dates"><span class="date-badge">7/13</span><span class="date-badge">7/20</span><span class="date-badge">7/27</span><span class="date-badge">8/3</span><span class="date-badge">8/10</span><span class="date-badge">8/17</span><span class="date-badge">8/24</span></div></div>
       <div class="time-slot"><div class="slot-header"><span class="slot-day">星期四班</span><span class="slot-time">15:00–16:00</span></div><div class="slot-dates"><span class="date-badge">7/16</span><span class="date-badge">7/23</span><span class="date-badge">7/30</span><span class="date-badge">8/6</span><span class="date-badge">8/13</span><span class="date-badge">8/20</span><span class="date-badge">8/27</span></div></div>
     </div>
+    <div class="sec-title">📊 班別名額</div>
+    <div id="quota-gym-mon" class="quota-wrap" data-enrolled="0" data-max="6" data-min="4" data-label="星期一班"></div>
+    <div id="quota-gym-thu" class="quota-wrap" data-enrolled="0" data-max="6" data-min="4" data-label="星期四班"></div>
     <div class="sec-title">💰 學費（全期7節 / 每人）</div>
     <table class="price-table">
       <thead><tr><th>報名期</th><th>1人報名</th><th>2人同行 95折</th><th>3人或以上 9折</th></tr></thead>
@@ -319,6 +368,9 @@
       <div class="time-slot"><div class="slot-header"><span class="slot-day">星期一班</span><span class="slot-time">15:00–16:00</span></div><div class="slot-dates"><span class="date-badge">7/13</span><span class="date-badge">7/20</span><span class="date-badge">7/27</span><span class="date-badge">8/3</span><span class="date-badge">8/10</span><span class="date-badge">8/17</span><span class="date-badge">8/24</span></div></div>
       <div class="time-slot"><div class="slot-header"><span class="slot-day">星期五班</span><span class="slot-time">15:00–16:00</span></div><div class="slot-dates"><span class="date-badge">7/17</span><span class="date-badge">7/24</span><span class="date-badge">7/31</span><span class="date-badge">8/7</span><span class="date-badge">8/14</span><span class="date-badge">8/21</span><span class="date-badge">8/28</span></div></div>
     </div>
+    <div class="sec-title">📊 班別名額</div>
+    <div id="quota-fit-mon" class="quota-wrap" data-enrolled="0" data-max="12" data-min="4" data-label="星期一班"></div>
+    <div id="quota-fit-fri" class="quota-wrap" data-enrolled="0" data-max="12" data-min="4" data-label="星期五班"></div>
     <div class="sec-title">💰 學費（全期7節 / 每人）</div>
     <table class="price-table">
       <thead><tr><th>報名期</th><th>1人報名</th><th>2人同行 95折</th><th>3人或以上 9折</th></tr></thead>
@@ -366,6 +418,14 @@
       <div class="time-slot"><div class="slot-header"><span class="slot-day">星期三班</span><span class="slot-time">15:00–16:00</span></div><div class="slot-dates"><span class="date-badge">7/15</span><span class="date-badge">7/22</span><span class="date-badge">7/29</span><span class="date-badge">8/5</span><span class="date-badge">8/12</span><span class="date-badge">8/19</span><span class="date-badge">8/26</span></div></div>
       <div class="time-slot"><div class="slot-header"><span class="slot-day">星期五班</span><span class="slot-time">14:00–15:00</span></div><div class="slot-dates"><span class="date-badge">7/17</span><span class="date-badge">7/24</span><span class="date-badge">7/31</span><span class="date-badge">8/7</span><span class="date-badge">8/14</span><span class="date-badge">8/21</span><span class="date-badge">8/28</span></div></div>
     </div>
+    <div class="sec-title">🎽 裝備要求</div>
+    <div class="equip-grid">
+      <div class="equip-card equip-included"><div class="equip-label">✅ 已包含於收費</div>場地費</div>
+      <div class="equip-card equip-own"><div class="equip-label">🎒 學員自備</div>乒乓球拍<br>合適運動服飾及運動鞋</div>
+    </div>
+    <div class="sec-title">📊 班別名額</div>
+    <div id="quota-tt-wed" class="quota-wrap" data-enrolled="0" data-max="6" data-min="4" data-label="星期三班"></div>
+    <div id="quota-tt-fri" class="quota-wrap" data-enrolled="0" data-max="6" data-min="4" data-label="星期五班"></div>
     <div class="sec-title">💰 學費（全期7節 / 每人）</div>
     <table class="price-table">
       <thead><tr><th>報名期</th><th>1人報名</th><th>2人同行 95折</th><th>3人或以上 9折</th></tr></thead>
@@ -413,6 +473,10 @@
       <div class="time-slot"><div class="slot-header"><span class="slot-day">星期四班</span><span class="slot-time">17:15–18:15</span></div><div class="slot-dates"><span class="date-badge">7/16</span><span class="date-badge">7/23</span><span class="date-badge">7/30</span><span class="date-badge">8/6</span><span class="date-badge">8/13</span><span class="date-badge">8/20</span><span class="date-badge">8/27</span></div></div>
       <div class="time-slot"><div class="slot-header"><span class="slot-day">星期六班</span><span class="slot-time">17:15–18:15</span></div><div class="slot-dates"><span class="date-badge">7/18</span><span class="date-badge">7/25</span><span class="date-badge">8/1</span><span class="date-badge">8/8</span><span class="date-badge">8/15</span><span class="date-badge">8/22</span><span class="date-badge">8/29</span></div></div>
     </div>
+    <div class="sec-title">📊 班別名額</div>
+    <div id="quota-ath-tue" class="quota-wrap" data-enrolled="0" data-max="12" data-min="4" data-label="星期二班"></div>
+    <div id="quota-ath-thu" class="quota-wrap" data-enrolled="0" data-max="12" data-min="4" data-label="星期四班"></div>
+    <div id="quota-ath-sat" class="quota-wrap" data-enrolled="0" data-max="12" data-min="4" data-label="星期六班"></div>
     <div class="sec-title">💰 學費（全期7節 / 每人）</div>
     <table class="price-table">
       <thead><tr><th>報名期</th><th>1人報名</th><th>2人同行 95折</th><th>3人或以上 9折</th></tr></thead>
@@ -467,6 +531,9 @@
       <div class="equip-card equip-included"><div class="equip-label">✅ 已包含於收費</div>場地費</div>
       <div class="equip-card equip-own"><div class="equip-label">🎒 學員自備</div>羽毛球拍<br>合適運動服飾及運動鞋</div>
     </div>
+    <div class="sec-title">📊 班別名額</div>
+    <div id="quota-bad-tue" class="quota-wrap" data-enrolled="0" data-max="6" data-min="4" data-label="星期二班"></div>
+    <div id="quota-bad-thu" class="quota-wrap" data-enrolled="0" data-max="6" data-min="4" data-label="星期四班"></div>
     <div class="sec-title">💰 學費（全期7節 / 每人）</div>
     <table class="price-table">
       <thead><tr><th>報名期</th><th>1人報名</th><th>2人同行 95折</th><th>3人或以上 9折</th></tr></thead>
@@ -536,6 +603,10 @@
       <div class="equip-card equip-included"><div class="equip-label">✅ 已包含於收費</div>場地費</div>
       <div class="equip-card equip-own"><div class="equip-label">🎒 學員自備</div>匹克球拍 + 匹克球<br>合適運動服飾及運動鞋<br><span style="font-size:12px;color:#b46800">如需購買球拍及球：$120 / 套</span></div>
     </div>
+    <div class="sec-title">📊 班別名額</div>
+    <div id="quota-pkl-tue1" class="quota-wrap" data-enrolled="0" data-max="6" data-min="4" data-label="星期二【低小學生優先】"></div>
+    <div id="quota-pkl-tue2" class="quota-wrap" data-enrolled="0" data-max="6" data-min="4" data-label="星期二【高小學生優先】"></div>
+    <div id="quota-pkl-fri" class="quota-wrap" data-enrolled="0" data-max="6" data-min="4" data-label="星期五班【兩小時班】"></div>
     <div class="sec-title">💰 學費（星期二班 — 1小時 / 全期7節 / 每人）</div>
     <table class="price-table">
       <thead><tr><th>報名期</th><th>1人報名</th><th>2人同行 95折</th><th>3人或以上 9折</th></tr></thead>
@@ -592,6 +663,14 @@
       <div class="time-slot"><div class="slot-header"><span class="slot-day">星期五班【低小學生優先】</span><span class="slot-time">09:00–10:00</span></div><div class="slot-dates"><span class="date-badge">7/17</span><span class="date-badge">7/24</span><span class="date-badge">7/31</span><span class="date-badge">8/7</span><span class="date-badge">8/14</span><span class="date-badge">8/21</span><span class="date-badge">8/28</span></div></div>
       <div class="time-slot"><div class="slot-header"><span class="slot-day">星期三班【高小學生優先】</span><span class="slot-time">09:00–10:00</span></div><div class="slot-dates"><span class="date-badge">7/15</span><span class="date-badge">7/22</span><span class="date-badge">7/29</span><span class="date-badge">8/5</span><span class="date-badge">8/12</span><span class="date-badge">8/19</span><span class="date-badge">8/26</span></div></div>
     </div>
+    <div class="sec-title">🎽 裝備要求</div>
+    <div class="equip-grid">
+      <div class="equip-card equip-included"><div class="equip-label">✅ 已包含於收費</div>場地費</div>
+      <div class="equip-card equip-own"><div class="equip-label">🎒 學員自備</div>籃球<br>合適運動服飾及運動鞋</div>
+    </div>
+    <div class="sec-title">📊 班別名額</div>
+    <div id="quota-bball-wed" class="quota-wrap" data-enrolled="0" data-max="10" data-min="4" data-label="星期三班【高小學生優先】"></div>
+    <div id="quota-bball-fri" class="quota-wrap" data-enrolled="0" data-max="10" data-min="4" data-label="星期五班【低小學生優先】"></div>
     <div class="sec-title">💰 學費（全期7節 / 每人）</div>
     <table class="price-table">
       <thead><tr><th>報名期</th><th>1人報名</th><th>2人同行 95折</th><th>3人或以上 9折</th></tr></thead>
@@ -608,13 +687,93 @@
       <li><span class="gift-icon">🍶</span><span>報兩班或以上額外送 <strong>獨家運動水樽</strong>（價值 $108）</span></li>
     </ul>
     <div class="cta-wrap">
-      <a class="cta-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSeavapXus7hg4XWS1z2e02XVjghJYmRrqFiqs3qzkJwyPvScw/viewform?usp=header" target="_blank">📝 立即報名</a>
+      <a class="cta-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSeavapXus7hg4XWS1z2e02XVjghJYmRrqFiqs3qzkJwyPvScw/viewform?usp=header" target="_blank" style="background:linear-gradient(135deg,#2a50a0,#0a1840)">📝 立即報名</a>
       <div class="cta-note">點擊後將跳至 Google 表格報名頁面</div>
     </div>
   </div>
 </section>
 
 </div><!-- /container -->
+
+<!-- ══════════ 私人訓練 ══════════ -->
+<div class="container">
+<section class="course t-gold" id="c-pt">
+  <div class="course-header">
+    <span class="emoji">⭐</span>
+    <h2>私人訓練課程</h2>
+    <p class="desc">專為對運動發展有更高期望的兒童與青少年（6歲或以上）而設。課程以運動科學及 S&C（Strength & Conditioning）訓練理念為核心，透過系統化、循序漸進的方式，全面提升學員的運動表現與身體素質。</p>
+  </div>
+  <div class="course-body">
+
+    <div class="sec-title">🧠 課程特色與訓練內容</div>
+    <div class="notice-box" style="line-height:1.9">
+      課程融合最新的體育教育研究成果，重點訓練以下能力：<br><br>
+      ✅ <strong>基礎力量與核心穩定性</strong>（Strength &amp; Core Stability）<br>
+      ✅ <strong>動作控制與神經肌肉協調</strong>（Motor Control &amp; Coordination）<br>
+      ✅ <strong>爆發力與速度訓練</strong>（Power &amp; Speed Development）<br>
+      ✅ <strong>靈敏度與平衡力發展</strong>（Agility &amp; Balance）<br>
+      ✅ <strong>跑、跳、投等基本動作技能強化</strong>（Fundamental Movement Skills）<br><br>
+      🟢 課程特別設計讓學員能將所學技能靈活應用於各類球類運動及其他運動，有效提升運動中的身體表現與反應能力。
+    </div>
+
+    <div class="sec-title">📈 訓練目標</div>
+    <div class="info-grid" style="grid-template-columns: repeat(3, 1fr)">
+      <div class="info-card"><div class="label">🏅 運動基礎</div><div class="value" style="font-size:13px">建立運動員式身體素養（Athletic Foundation）</div></div>
+      <div class="info-card"><div class="label">💪 全面體能</div><div class="value" style="font-size:13px">強化全身性體能，為日後任何運動專項打好基礎</div></div>
+      <div class="info-card"><div class="label">🎯 動作效率</div><div class="value" style="font-size:13px">優化動作效率與學習能力，提升自信與紀律</div></div>
+      <div class="info-card"><div class="label">🌱 長遠發展</div><div class="value" style="font-size:13px">培養長期運動習慣與成長型思維</div></div>
+      <div class="info-card"><div class="label">📊 進度追蹤</div><div class="value" style="font-size:13px">定期能力測試與成效分析，協助學生和家長掌握進度</div></div>
+      <div class="info-card"><div class="label">👤 度身訂造</div><div class="value" style="font-size:13px">按學員個人需要和運動目標制定訓練計劃</div></div>
+    </div>
+
+    <div class="sec-title">💰 課程套餐</div>
+    <div class="pt-trial">
+      <div class="trial-price">試堂 $450</div>
+      <div class="trial-note">首次試堂優惠（正價 $600 / 堂）</div>
+    </div>
+    <div class="pt-grid">
+      <div class="pt-card">
+        <div class="pt-sessions">1 堂</div>
+        <div class="pt-total">$600</div>
+        <div class="pt-per">$600 / 堂</div>
+        <div class="pt-expiry">靈活安排</div>
+      </div>
+      <div class="pt-card">
+        <div class="pt-sessions">5 堂</div>
+        <div class="pt-total">$2,750</div>
+        <div class="pt-per">$550 / 堂</div>
+        <div class="pt-expiry">2個月使用限期</div>
+      </div>
+      <div class="pt-card featured">
+        <div class="pt-badge">🔥 最受歡迎</div>
+        <div class="pt-sessions">10 堂</div>
+        <div class="pt-total">$5,000</div>
+        <div class="pt-per">$500 / 堂</div>
+        <div class="pt-expiry">4個月使用限期</div>
+      </div>
+      <div class="pt-card featured">
+        <div class="pt-badge">💎 最高性價比</div>
+        <div class="pt-sessions">20 堂</div>
+        <div class="pt-total">$9,000</div>
+        <div class="pt-per">$450 / 堂</div>
+        <div class="pt-expiry">6個月使用限期</div>
+      </div>
+    </div>
+
+    <div class="sec-title">📍 上課地點及安排</div>
+    <div class="venue-box">
+      <div class="venue-main">青衣區 / 荃灣區（1對1，已包場租）</div>
+      <div class="venue-backup">⚠️ 1:2 訓練加收 50% 費用</div>
+      <div class="venue-backup" style="margin-top:4px">其他地區 / 3人或以上小組訓練，請 WhatsApp 查詢</div>
+    </div>
+
+    <div class="cta-wrap">
+      <a class="cta-btn" href="https://wa.me/85263317403?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E7%A7%81%E4%BA%BA%E8%A8%93%E7%B7%B4%E8%AA%B2%E7%A8%8B%E8%A9%B3%E6%83%85" target="_blank" style="background:linear-gradient(135deg,#c89020,#7a5000)">💬 WhatsApp 查詢及預約</a>
+      <div class="cta-note">點擊後將直接開啟 WhatsApp 與張 Sir 對話</div>
+    </div>
+  </div>
+</section>
+</div>
 
 <footer class="site-footer">
   <div class="wa">WhatsApp：6331 7403</div>
@@ -623,6 +782,7 @@
 </footer>
 
 <script>
+// ── Navigation ──
 function show(id, tab, color) {
   document.querySelectorAll('.course').forEach(el => el.classList.remove('active'));
   document.querySelectorAll('.nav-tab').forEach(el => {
@@ -634,6 +794,118 @@ function show(id, tab, color) {
   tab.style.color = color;
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+// ── Quota / Progress Bar System ──
+// Apps Script Web App URL — paste your deployed URL here
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwRW3PBA6GA0I7AvHOdPVPkpsAl-Qi2vvmz-MDUtLGX4Vw0mI9whfkwXb6ddMgGZOU/exec';
+
+// Fallback data (used when Apps Script is not yet set up or fails)
+const fallbackData = {
+  'quota-jump-mon':  1,
+  'quota-jump-tue':  0,
+  'quota-jump-wed':  0,
+  'quota-jump-thu':  0,
+  'quota-gym-mon':   2,
+  'quota-gym-thu':   0,
+  'quota-fit-mon':   0,
+  'quota-fit-fri':   0,
+  'quota-tt-wed':    0,
+  'quota-tt-fri':    0,
+  'quota-ath-tue':   0,
+  'quota-ath-thu':   4,
+  'quota-ath-sat':   0,
+  'quota-bad-tue':   2,
+  'quota-bad-thu':   2,
+  'quota-pkl-tue1':  0,
+  'quota-pkl-tue2':  0,
+  'quota-pkl-fri':   0,
+  'quota-bball-wed': 0,
+  'quota-bball-fri': 4,
+};
+
+// Convert to the format renderQuota expects
+let enrollmentData = {};
+Object.keys(fallbackData).forEach(k => {
+  enrollmentData[k] = { enrolled: fallbackData[k] };
+});
+
+// Fetch live data from Apps Script
+async function fetchLiveData() {
+  if (!APPS_SCRIPT_URL || APPS_SCRIPT_URL === 'YOUR_APPS_SCRIPT_URL_HERE') return;
+  try {
+    const res = await fetch(APPS_SCRIPT_URL);
+    const data = await res.json();
+    // Merge live data into enrollmentData
+    Object.keys(data).forEach(k => {
+      enrollmentData[k] = { enrolled: data[k] };
+    });
+    renderAllQuotas(); // Re-render with live data
+  } catch (e) {
+    console.log('Using fallback data:', e.message);
+  }
+}
+
+function getStatusClass(enrolled, max, min) {
+  const pct = enrolled / max;
+  if (enrolled >= max) return 'full';
+  if (pct >= 0.75) return 'almost';
+  if (pct >= 0.4) return 'half';
+  return 'open';
+}
+
+function getStatusLabel(enrolled, max, min) {
+  if (enrolled >= max) return '名額已滿';
+  if (enrolled >= min) return '✅ 已成班';
+  const need = min - enrolled;
+  return `尚需 ${need} 人成班`;
+}
+
+function getStatusBadgeClass(enrolled, max, min) {
+  if (enrolled >= max) return 'full';
+  if (enrolled >= min) return 'formed';
+  const pct = enrolled / max;
+  if (pct >= 0.75) return 'almost';
+  if (pct >= 0.4) return 'half';
+  return 'open';
+}
+
+function renderQuota(el) {
+  const id = el.id;
+  const max = parseInt(el.dataset.max);
+  const min = parseInt(el.dataset.min);
+  const label = el.dataset.label;
+  const data = enrollmentData[id] || { enrolled: 0 };
+  const enrolled = data.enrolled;
+  const remaining = Math.max(0, max - enrolled);
+  const pct = Math.min(100, Math.round((enrolled / max) * 100));
+  const statusClass = getStatusClass(enrolled, max, min);
+  const badgeClass = getStatusBadgeClass(enrolled, max, min);
+  const statusLabel = getStatusLabel(enrolled, max, min);
+
+  el.innerHTML = `
+    <div class="quota-header">
+      <span class="quota-label">${label}</span>
+      <span class="quota-status ${badgeClass}">${statusLabel}</span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-bar ${statusClass}" style="width:${pct}%"></div>
+    </div>
+    <div class="quota-counts">已報名 ${enrolled} 人 ／ 共 ${max} 個名額 ／ 剩餘 ${remaining} 個</div>
+    <div class="quota-min-note">最少 ${min} 人成班</div>
+  `;
+}
+
+function renderAllQuotas() {
+  document.querySelectorAll('.quota-wrap').forEach(el => renderQuota(el));
+}
+
+// Render on load (fallback first, then live data)
+document.addEventListener('DOMContentLoaded', () => {
+  renderAllQuotas();
+  fetchLiveData();
+});
+renderAllQuotas();
+fetchLiveData();
 </script>
 </body>
 </html>
