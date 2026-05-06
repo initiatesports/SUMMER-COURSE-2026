@@ -320,8 +320,8 @@
       <div class="time-slot"><div class="slot-header"><span class="slot-day">星期四班</span><span class="slot-time">15:00–16:00</span></div><div class="slot-dates"><span class="date-badge">7/16</span><span class="date-badge">7/23</span><span class="date-badge">7/30</span><span class="date-badge">8/6</span><span class="date-badge">8/13</span><span class="date-badge">8/20</span><span class="date-badge">8/27</span></div></div>
     </div>
     <div class="sec-title">📊 班別名額</div>
-    <div id="quota-gym-mon" class="quota-wrap" data-enrolled="0" data-max="6" data-min="4" data-label="星期一班"></div>
-    <div id="quota-gym-thu" class="quota-wrap" data-enrolled="0" data-max="6" data-min="4" data-label="星期四班"></div>
+    <div id="quota-gym-mon" class="quota-wrap" data-enrolled="6" data-max="6" data-min="4" data-label="星期一班"></div>
+    <div id="quota-gym-thu" class="quota-wrap" data-enrolled="6" data-max="6" data-min="4" data-label="星期四班"></div>
     <div class="sec-title">💰 學費（全期7節 / 每人）</div>
     <table class="price-table">
       <thead><tr><th>報名期</th><th>1人報名</th><th>2人同行 95折</th><th>3人或以上 9折</th></tr></thead>
@@ -787,24 +787,22 @@ const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwRW3PBA6GA0I7A
 const fallbackData = {
   'quota-jump-mon':  1,
   'quota-jump-tue':  0,
-  'quota-jump-wed':  0,
-  'quota-jump-thu':  0,
-  'quota-gym-mon':   2,
-  'quota-gym-thu':   0,
+  'quota-jump-wed':  1,
+  'quota-jump-thu':  2,
+  'quota-gym-mon':   6,
+  'quota-gym-thu':   6,
   'quota-fit-mon':   0,
   'quota-fit-fri':   0,
-  'quota-tt-wed':    0,
-  'quota-tt-fri':    0,
   'quota-ath-tue':   0,
   'quota-ath-thu':   4,
   'quota-ath-sat':   0,
-  'quota-bad-tue':   2,
-  'quota-bad-thu':   2,
-  'quota-pkl-tue1':  0,
+  'quota-bad-tue':   7,
+  'quota-bad-thu':   8,
+  'quota-pkl-tue1':  3,
   'quota-pkl-tue2':  0,
-  'quota-pkl-fri':   0,
+  'quota-pkl-fri':   3,
   'quota-bball-wed': 0,
-  'quota-bball-fri': 4,
+  'quota-bball-fri': 5,
 };
 
 // Convert to the format renderQuota expects
