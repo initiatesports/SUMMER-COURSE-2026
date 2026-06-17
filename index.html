@@ -408,6 +408,7 @@
     </div>
     <div class="sec-title">⏰ 上課時間及日期</div>
     <div class="time-slots">
+      <div class="time-slot"><div class="slot-header"><span class="slot-day">星期三班</span><span class="slot-time">11:00–13:00</span></div><div class="slot-dates"><span class="date-badge">7/15</span><span class="date-badge">7/22</span><span class="date-badge">7/29</span><span class="date-badge">8/5</span><span class="date-badge">8/12</span><span class="date-badge">8/19</span><span class="date-badge">8/26</span></div></div>
       <div class="time-slot"><div class="slot-header"><span class="slot-day">星期二班</span><span class="slot-time">17:15–18:15</span></div><div class="slot-dates"><span class="date-badge">7/14</span><span class="date-badge">7/21</span><span class="date-badge">7/28</span><span class="date-badge">8/4</span><span class="date-badge">8/11</span><span class="date-badge">8/18</span><span class="date-badge">8/25</span></div></div>
       <div class="time-slot"><div class="slot-header"><span class="slot-day">星期四班</span><span class="slot-time">17:15–18:15</span></div><div class="slot-dates"><span class="date-badge">7/16</span><span class="date-badge">7/23</span><span class="date-badge">7/30</span><span class="date-badge">8/6</span><span class="date-badge">8/13</span><span class="date-badge">8/20</span><span class="date-badge">8/27</span></div></div>
     </div>
@@ -468,6 +469,7 @@
       <div class="equip-card equip-own"><div class="equip-label">🎒 學員自備</div>羽毛球拍<br>合適運動服飾及運動鞋</div>
     </div>
     <div class="sec-title">📊 班別名額</div>
+    <div id="quota-bad-wed" class="quota-wrap" data-enrolled="6" data-max="6" data-min="4" data-label="星期三班"></div>
     <div id="quota-bad-tue" class="quota-wrap" data-enrolled="0" data-max="6" data-min="4" data-label="星期二班"></div>
     <div id="quota-bad-thu" class="quota-wrap" data-enrolled="0" data-max="6" data-min="4" data-label="星期四班"></div>
     <div class="sec-title">💰 學費（全期7節 / 每人）</div>
@@ -773,6 +775,7 @@ const fallbackData = {
   'quota-fit-fri':   0,
   'quota-ath-tue':   0,
   'quota-ath-thu':   4,
+  'quota-bad-wed':   6,
   'quota-bad-tue':   6,
   'quota-bad-thu':   6,
   'quota-pkl-tue1':  3,
