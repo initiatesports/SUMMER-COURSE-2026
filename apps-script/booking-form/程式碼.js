@@ -43,8 +43,9 @@ const TIMESLOT_MAP = {
     { match: '星期五', id: 'quota-pkl-fri' },
   ],
   bball: [
+    // 籃球合併顯示：星期三(高小)＋星期五(低小)兩個時段都計入同一張卡，名額卡顯示總報名人數
     { match: '星期三', id: 'quota-bball-wed' },
-    { match: '星期五', id: 'quota-bball-fri' },
+    { match: '星期五', id: 'quota-bball-wed' },
   ],
 };
 
