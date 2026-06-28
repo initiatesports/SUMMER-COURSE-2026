@@ -589,5 +589,22 @@ function show(id, tab, color) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 </script>
+<script>
+/* 暑期班報名截止（2026-06-28）：停用所有 Google Form「立即報名」掣（私訓 WhatsApp 保留）。
+   要重開報名：刪除呢段 script 即可。 */
+(function(){
+  var bn=document.createElement('div');
+  bn.style.cssText='background:linear-gradient(135deg,#c0392b,#7a1a10);color:#fff;text-align:center;padding:14px 16px;font-weight:800;font-size:15px;letter-spacing:0.02em;line-height:1.5;box-shadow:0 2px 8px rgba(0,0,0,0.15)';
+  bn.innerHTML='📢 暑期班報名已截止，多謝各位支持！<br><span style="font-weight:600;font-size:13px;opacity:0.95">如有查詢，歡迎 WhatsApp 聯絡 INITIATE SPORTS</span>';
+  document.body.insertBefore(bn, document.body.firstChild);
+  document.querySelectorAll('a.cta-btn').forEach(function(b){
+    var h=b.getAttribute('href')||'';
+    if(h.indexOf('docs.google.com/forms')<0) return;   /* 只停報名表單，保留私訓 WhatsApp */
+    b.removeAttribute('href'); b.removeAttribute('target');
+    b.textContent='✕ 報名已截止';
+    b.style.background='#9aa0a6'; b.style.cursor='not-allowed'; b.style.pointerEvents='none'; b.style.opacity='0.85';
+  });
+})();
+</script>
 </body>
 </html>
