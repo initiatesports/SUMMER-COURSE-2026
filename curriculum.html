@@ -73,6 +73,28 @@
   .lesson .prow:first-of-type{border-top:none; padding-top:0;}
   .lesson .prow .pt{flex:0 0 92px; font-weight:800; color:var(--teal); font-variant-numeric:tabular-nums; letter-spacing:-.01em;}
   .lesson .prow .pd{flex:1; color:var(--ink2);}
+  /* professional lesson plan */
+  .pro{margin-top:4px;}
+  .pro .pg{padding:9px 0; border-top:1px solid var(--line);}
+  .pro .pgk{font-size:12px; font-weight:900; color:var(--muted); letter-spacing:.04em; margin-bottom:4px;}
+  .pro .pgi{font-size:13.5px; color:var(--ink2); margin:2px 0;}
+  .pro .pgi b{color:var(--teal); margin-right:5px;}
+  .pro .sci2 .pgi{font-style:italic; color:var(--muted);}
+  .pro .dh{font-size:14px; font-weight:900; color:var(--ink); margin:13px 0 8px; padding-top:11px;
+    border-top:2px solid var(--teal);}
+  .drill{background:var(--bg); border-radius:12px; padding:11px 13px; margin-bottom:11px; border:1px solid var(--line);}
+  .drill .dn{font-weight:900; font-size:14px; color:var(--ink); margin-bottom:6px;}
+  .drill .dk{font-size:11.5px; font-weight:800; color:var(--teal); letter-spacing:.03em; margin:8px 0 3px;}
+  .drill .dsteps{margin:2px 0; padding-left:20px; font-size:13px; color:var(--ink2);}
+  .drill .dsteps li{margin:2px 0;}
+  .drill .derr{margin:2px 0; padding-left:17px; font-size:13px; color:var(--ink2); list-style:none;}
+  .drill .derr li{margin:5px 0; padding-left:2px;}
+  .drill .derr li b{color:#c0392b;}
+  .drill .ddiff{display:flex; flex-direction:column; gap:4px; margin-top:8px; font-size:12.5px;}
+  .drill .ddiff .up{color:#1a8a4a; font-weight:600;}
+  .drill .ddiff .down{color:#9C6500; font-weight:600;}
+  .drill .dvid{display:inline-block; margin-top:9px; font-size:12.5px; font-weight:800; color:#fff;
+    background:var(--teal); padding:6px 12px; border-radius:20px; text-decoration:none;}
   /* refs */
   .refs a{display:flex; gap:10px; align-items:flex-start; padding:11px 13px; background:var(--card);
     border:1px solid var(--line); border-radius:12px; margin-bottom:9px; text-decoration:none; color:var(--ink);}
@@ -119,7 +141,22 @@ const DATA = {
     safety:['器材：兒童輕量球拍（約 80g 以下）、慢速羽毛球／塑膠球（延長滯空便於反應）、標誌碟、低網、平衡氣球（首節用）','場地：開課前檢查地面是否濕滑、鞋帶、緩衝區；每人至少一臂揮拍距離，避免揮拍碰撞','身體：每節動態熱身＋收操拉伸；overhead 前先熱肩；提醒「揮拍前先望左右」','補水：每 25–30 分鐘 water break（暑期防中暑）'],
     assess:'持續觀察（能做到／部分做到／需協助）每節記錄握拍、發球、高遠球、步法；第 4 節做半期小檢（發球入區次數、連續對拍次數），第 7 節結業挑戰賽＋技術 checklist；結業給家長簡短個人評語（強項＋下階段建議）。',
     lessons:[
-      {t:'認識羽毛球 ＆ 握拍與拍感',sub:'Grip & Racket Control',o:'能正確示範正手（握手式）與反手（拇指頂）握拍；能控球維持平衡。',w:'標誌碟「紅綠燈」跑動 + 動態關節活動（肩、腕、踝）。約 15 分鐘。',m:['球拍當「平底鍋」，拍面平放氣球／慢速球，邊走邊維持不掉','正手握拍連續向上墊球（self-rally）；反手同樣練','「轉拍」：拇指滾動由正手轉反手 grip'],g:'氣球接力賽 — 拍面托氣球繞 cone 不掉落。',cues:['同球拍握手','手指放鬆唔好握死','拍面望天托波'],s:'grip 是所有技術的根；先用氣球／慢速球放慢節奏，降低認知負荷，讓初學者在封閉、可控環境先成功。'},
+      {t:'認識羽毛球 ＆ 握拍與拍感',sub:'Grip & Racket Control',o:'能正確示範正手（握手式）與反手（拇指頂）握拍；能控球維持平衡。',w:'標誌碟「紅綠燈」跑動 + 動態關節活動（肩、腕、踝）。約 15 分鐘。',m:['球拍當「平底鍋」，拍面平放氣球／慢速球，邊走邊維持不掉','正手握拍連續向上墊球（self-rally）；反手同樣練','「轉拍」：拇指滾動由正手轉反手 grip'],g:'氣球接力賽 — 拍面托氣球繞 cone 不掉落。',cues:['同球拍握手','手指放鬆唔好握死','拍面望天托波'],s:'grip 是所有技術的根；先用氣球／慢速球放慢節奏，降低認知負荷，讓初學者在封閉、可控環境先成功。',
+        pro:{
+          goals:{skill:'能正確示範正手（握手式）及反手（拇指頂）握拍；能用拍面顛球／self-rally 連續 10 下以上。',fitness:'透過托球移動、接力，發展手眼協調、平衡及輕量有氧耐力。',attitude:'建立對羽毛球的興趣與成功感；學會輪候、收拾器材、注意安全。'},
+          focus:'正手「握手式」握拍（虎口呈 V 形對住拍柄窄邊）、手指放鬆、拍面控制。',
+          diff:'兒童傾向「握死」（拳頭式）或用「蒼蠅拍式」握法；反手拇指頂的位置容易擺錯。',
+          equip:['兒童輕量羽毛球拍 ×6','慢速／塑膠羽毛球 ×12 以上','平衡氣球 ×6','標誌碟 ×12','呼拉圈／小障礙 ×4'],
+          org:'熱身全場散開；握拍教學圍半圓面向教練；托球與 self-rally 每人一拍一球、散開保持一臂揮拍距離；闖關接力分 2–3 隊輪流。',
+          drills:[
+            {name:'① 正手握拍 Forehand「shake-hands」grip',steps:['拍框垂直地面，似同球拍「握手」','虎口呈 V 形對住拍柄窄邊','食指微微分開呈「扳機」狀','尾三指輕握，唔好握死'],cues:['同球拍握手','手指放鬆','握到可以郁手腕先啱'],errors:[{e:'握死（拳頭式）、手腕郁唔到',fix:'提醒鬆開手指，示範手腕擺動空間'},{e:'蒼蠅拍式（虎口對住拍框闊邊）',fix:'把拍轉 90°，重新對窄邊'},{e:'握得太近拍框',fix:'把手移返落手柄下方'}],up:'閉眼握拍再自我檢查；邊行邊保持握法。',down:'教練手把手擺位；喺虎口位貼貼紙做記號。',video:{title:'BWF Shuttle Time — 官方握拍／技術示範短片',url:'https://shuttletime.bwfbadminton.com/video-clips'}},
+            {name:'② 平底鍋托球 Balance & Control',steps:['拍面朝天似一個平底鍋','放氣球／慢速球喺拍面','原地保持唔跌','穩定後過渡到行走、繞 cone'],cues:['拍面平放','望住個波','細細力托'],errors:[{e:'拍面側咗，球滾走',fix:'提醒「平放似平底鍋」'},{e:'眼望地下',fix:'「望住個波」'},{e:'郁得太大力',fix:'「細細力、慢慢嚟」'}],up:'托球繞障礙行／連續向上輕顛。',down:'先用氣球（慢）再換慢速球；縮短距離。',video:{title:'BWF Shuttle Time — 拍感／控球活動示範',url:'https://shuttletime.bwfbadminton.com/video-clips'}},
+            {name:'③ 正反手 self-rally 顛球',steps:['正手握拍，向上輕擊連續顛球','轉反手握拍（拇指頂）同樣顛','記連續次數，逐步加高度'],cues:['拍面向上','細力彈手腕','擊球點喺身前'],errors:[{e:'用大臂大力掃',fix:'「淨係細力彈手腕」'},{e:'球飛走、追唔到',fix:'「擊球點放喺身前」、先降低高度'}],up:'正反手交替顛；設連續目標（如 15 下）。',down:'降低顛球高度、先用氣球。',video:{title:'BWF Development — 世界羽聯官方示範頻道',url:'https://www.youtube.com/c/BWFDevelopment'}},
+            {name:'④ 轉拍 Grip Change',steps:['拇指由正手位滾去反手頂位','邊托球邊聽口令快速轉拍'],cues:['拇指滾動','轉拍時唔好放鬆跌拍'],errors:[{e:'成隻手重新握過（太慢）',fix:'示範「淨係拇指滾」的微調'}],up:'加快轉拍口令頻率。',down:'放慢、先唔托球淨係練轉。',video:null}
+          ],
+          assess:'逐人觀察正手握拍是否正確（✓／需協助）、托球連續次數、self-rally 連續次數，記錄作下節分組依據。',
+          safe:'散開保持一臂揮拍距離；「揮拍前先望左右」；地面乾爽無障礙；每 25–30 分鐘 water break。'
+        }},
       {t:'反手發球 ＆ 近網擊球',sub:'Serve & Net Area',o:'能做反手低發球把球送入對面發球區；能近網把球打過低網。',w:'拍面托球競走 + 影子揮拍（shadow swing）。約 12 分鐘。',m:['反手發球分解：拇指 grip → 球在拍前 → 輕推過網（先求入區不求力）','近網對教練拋球，正手輕擊回','發球入「呼拉圈目標」計分'],g:'「發球射龍門」— 對面分區，命中得分。',cues:['球放拍前面','輕輕推唔好掃','望住目標先發'],s:'Shuttle Time 把發球與近網列為最早技術，因動作幅度細、成功率高，能快速建立信心並理解「過網入區」目標。'},
       {t:'移動步法基礎',sub:'Footwork & Movement',o:'能做 split-step 起動，並用「上網一步、後退回中」的節奏移動。',w:'反應遊戲（教練手勢指方向，學員起動）+ 踝膝熱身。約 15 分鐘。',m:['中心點（base）概念：每次擊球後回中','上網步：交叉／並步上前撿 cone 上的球','後退步：側身後撤觸標誌再回中','「米字步」簡化版（四角 → 中心）'],g:'「四角搶球」反應賽，教練叫角號學員衝去摸。',cues:['落地輕、膝頭軟','打完即刻返中間','望波先郁腳'],s:'先把移動與擊球分開練（part practice），待步法自動化後再合併，符合「先動作骨架、後加複雜度」的學習序列。'},
       {t:'正手高遠球 ＋ 半期檢查',sub:'Forehand Overhead Clear',o:'能用 overhead 動作把球高而遠地打回後場。',w:'擲球過頂（mimic throwing）熱肩 + 影子高遠球。約 15 分鐘。',m:['「投擲動作」遷移：先做網球式上手擲球，感受側身、轉體、揮臂','教練近距離拋高球，學員定點 overhead 擊高遠','加入「擊球後回中」連結步法','半期檢查：發球入區次數 + 連續對拍次數記錄'],g:'「打高過繩」挑戰 — 球須越過高拉的繩／高度線。',cues:['側身、手肘高','好似掟石仔咁掟出去','擊球點喺頭頂前上方'],s:'overhead 最難、需肩部協調，故放中段、待 grip 與肩熱身成熟才教；用「擲球」作生物力學遷移加速學習。'},
@@ -279,13 +316,40 @@ function lessonHTML(L,color,plan){
   const cues=(L.cues||[]).map(c=>'<span class="cue">'+esc(c)+'</span>').join('');
   const planHTML=(plan&&plan.length)?(`<div class="plan"><div class="plan-h">🕐 詳細教案（逐分鐘時間表）</div>`+
     plan.map(p=>`<div class="prow"><span class="pt">${esc(p[0])}</span><span class="pd">${esc(p[1])}</span></div>`).join('')+`</div>`):'';
-  return planHTML + `<div class="row"><div class="k">學習目標</div><div class="v">${esc(L.o)}</div></div>
+  const light = `<div class="row"><div class="k">學習目標</div><div class="v">${esc(L.o)}</div></div>
     <div class="row"><div class="k">熱身</div><div class="v">${esc(L.w)}</div></div>
     <div class="row"><div class="k">主要內容</div><div class="v">${arr(L.m)}</div></div>
     ${L.flex?`<div class="row"><div class="k">柔韌訓練</div><div class="v">${esc(L.flex)}</div></div>`:''}
     <div class="row"><div class="k">趣味遊戲</div><div class="v">${esc(L.g)}</div></div>
     <div class="row"><div class="k">教練要點</div><div class="v">${cues}</div></div>
     <div class="row sci"><div class="k">科學原理</div><div class="v">${esc(L.s)}</div></div>`;
+  return planHTML + (L.pro ? proHTML(L) : light);
+}
+function proHTML(L){
+  const p=L.pro;
+  const g=p.goals;
+  const drills=p.drills.map(d=>`<div class="drill">
+      <div class="dn">${esc(d.name)}</div>
+      <div class="dk">步驟分解</div><ol class="dsteps">${d.steps.map(s=>'<li>'+esc(s)+'</li>').join('')}</ol>
+      <div class="dk">動作要領</div><div>${d.cues.map(c=>'<span class="cue">'+esc(c)+'</span>').join('')}</div>
+      <div class="dk">常見錯誤 → 糾正</div><ul class="derr">${d.errors.map(x=>'<li><b>'+esc(x.e)+'</b><br>↳ '+esc(x.fix)+'</li>').join('')}</ul>
+      <div class="ddiff"><span class="up">⬆ 進階：${esc(d.up)}</span><span class="down">⬇ 退階：${esc(d.down)}</span></div>
+      ${d.video?`<a class="dvid" href="${d.video.url}" target="_blank" rel="noopener">▶ ${esc(d.video.title)}</a>`:''}
+    </div>`).join('');
+  return `<div class="pro">
+    <div class="pg"><div class="pgk">🎯 三維教學目標</div>
+      <div class="pgi"><b>技能</b> ${esc(g.skill)}</div>
+      <div class="pgi"><b>體能</b> ${esc(g.fitness)}</div>
+      <div class="pgi"><b>態度</b> ${esc(g.attitude)}</div></div>
+    <div class="pg"><div class="pgk">📌 教學重點</div><div class="pgi">${esc(p.focus)}</div></div>
+    <div class="pg"><div class="pgk">⚠️ 教學難點</div><div class="pgi">${esc(p.diff)}</div></div>
+    <div class="pg"><div class="pgk">🎒 器材清單</div><div class="pgi">${p.equip.map(esc).join('、')}</div></div>
+    <div class="pg"><div class="pgk">👥 隊形／組織</div><div class="pgi">${esc(p.org)}</div></div>
+    <div class="dh">🏸 動作詳細教法</div>${drills}
+    <div class="pg"><div class="pgk">📝 課後評估</div><div class="pgi">${esc(p.assess)}</div></div>
+    <div class="pg"><div class="pgk">🦺 安全提示</div><div class="pgi">${esc(p.safe)}</div></div>
+    <div class="pg sci2"><div class="pgk">🔬 科學原理</div><div class="pgi">${esc(L.s)}</div></div>
+  </div>`;
 }
 function render(key){
   const D=DATA[key], T=THEME[key];
