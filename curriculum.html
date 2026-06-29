@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>暑期班課表 · INITIATE SPORTS</title>
+<style>
+  :root{ --teal:#1b8d9b; --teal-d:#0f6b77; --ink:#1f2a2e; --ink2:#475259; --muted:#7a868d;
+    --line:#e6ebee; --bg:#f4f7f8; --card:#fff; }
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+  body{margin:0; font-family:-apple-system,BlinkMacSystemFont,"PingFang HK","Microsoft JhengHei",sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.6;}
+  header{background:linear-gradient(135deg,#1b8d9b,#0c5560); color:#fff; padding:26px 18px 20px; text-align:center;}
+  header .logo{font-size:12px; letter-spacing:.28em; opacity:.9; font-weight:700;}
+  header h1{margin:6px 0 4px; font-size:24px; font-weight:900; letter-spacing:.04em;}
+  header .sub{font-size:13px; opacity:.92;}
+  .wrap{max-width:860px; margin:0 auto; padding:0 14px 60px;}
+  .intro{background:var(--card); border-radius:16px; padding:16px 16px; margin:16px 0; border:1px solid var(--line);
+    font-size:13.5px; color:var(--ink2);}
+  .intro b{color:var(--teal-d);}
+  /* tabs */
+  .tabs{position:sticky; top:0; z-index:5; background:var(--bg); padding:10px 0 8px; display:flex; gap:8px;
+    overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none;}
+  .tabs::-webkit-scrollbar{display:none;}
+  .tab{flex:0 0 auto; padding:9px 15px; border-radius:30px; background:#fff; border:2px solid var(--line);
+    font-weight:800; font-size:14px; color:var(--ink2); cursor:pointer; white-space:nowrap; transition:.15s;}
+  .tab.on{color:#fff; border-color:transparent;}
+  /* sport header */
+  .sp-head{border-radius:18px; padding:18px 18px; color:#fff; margin-bottom:14px;}
+  .sp-head h2{margin:0 0 4px; font-size:21px; font-weight:900;}
+  .sp-fw{display:inline-block; background:rgba(255,255,255,.22); padding:3px 11px; border-radius:20px;
+    font-size:12px; font-weight:700; margin-bottom:10px;}
+  .chips{display:flex; flex-wrap:wrap; gap:7px; margin-top:4px;}
+  .chip{background:rgba(255,255,255,.18); padding:5px 11px; border-radius:10px; font-size:12.5px; font-weight:700;}
+  .sec{background:var(--card); border-radius:16px; padding:15px 16px; margin-bottom:13px; border:1px solid var(--line);}
+  .sec h3{margin:0 0 8px; font-size:15px; font-weight:900; display:flex; align-items:center; gap:7px;}
+  .sec p{margin:0; font-size:13.5px; color:var(--ink2);}
+  details{background:var(--card); border-radius:14px; border:1px solid var(--line); margin-bottom:13px; overflow:hidden;}
+  details summary{padding:13px 16px; font-weight:800; font-size:14.5px; cursor:pointer; list-style:none; display:flex;
+    justify-content:space-between; align-items:center;}
+  details summary::-webkit-details-marker{display:none;}
+  details summary::after{content:"▾"; transition:.2s; color:var(--muted);}
+  details[open] summary::after{transform:rotate(180deg);}
+  details .body{padding:0 16px 14px; font-size:13px; color:var(--ink2);}
+  details .body ul{margin:6px 0 0; padding-left:18px;}
+  details .body li{margin:4px 0;}
+  /* lessons */
+  .lessons-h{font-size:16px; font-weight:900; margin:18px 0 10px; padding-left:4px;}
+  .lesson{background:var(--card); border-radius:16px; border:1px solid var(--line); margin-bottom:12px; overflow:hidden;}
+  .lesson .lh{display:flex; align-items:center; gap:11px; padding:13px 15px; cursor:pointer;}
+  .lesson .num{flex:0 0 auto; width:34px; height:34px; border-radius:10px; display:flex; align-items:center;
+    justify-content:center; font-weight:900; font-size:15px; color:#fff;}
+  .lesson .lt{font-weight:800; font-size:14.5px; line-height:1.35;}
+  .lesson .lt small{display:block; font-weight:600; font-size:11.5px; color:var(--muted);}
+  .lesson .det{padding:0 15px 14px; display:none;}
+  .lesson.open .det{display:block;}
+  .lesson .row{padding:9px 0; border-top:1px solid var(--line);}
+  .lesson .row .k{font-size:11.5px; font-weight:800; color:var(--muted); letter-spacing:.04em; margin-bottom:2px;
+    text-transform:uppercase;}
+  .lesson .row .v{font-size:13.5px; color:var(--ink2);}
+  .lesson .row .v ul{margin:3px 0 0; padding-left:17px;}
+  .lesson .row .v li{margin:3px 0;}
+  .lesson .row.sci .v{font-style:italic; color:var(--muted);}
+  .lesson .cue{background:var(--bg); border-radius:9px; padding:3px 9px; font-size:12.5px; display:inline-block;
+    margin:3px 5px 0 0; font-weight:600;}
+  /* refs */
+  .refs a{display:flex; gap:10px; align-items:flex-start; padding:11px 13px; background:var(--card);
+    border:1px solid var(--line); border-radius:12px; margin-bottom:9px; text-decoration:none; color:var(--ink);}
+  .refs a:hover{border-color:var(--teal);}
+  .refs .rt{flex:1; min-width:0;}
+  .refs .rtitle{font-weight:800; font-size:13.5px; line-height:1.35;}
+  .refs .rurl{font-size:11px; color:var(--teal-d); word-break:break-all; margin-top:2px;}
+  .refs .badge{flex:0 0 auto; font-size:10.5px; font-weight:800; padding:3px 8px; border-radius:8px;
+    background:rgba(27,141,155,.12); color:var(--teal-d); white-space:nowrap; margin-top:1px;}
+  .foot{text-align:center; font-size:11.5px; color:var(--muted); margin-top:26px; line-height:1.7;}
+  .note{font-size:12px; color:var(--muted); margin:10px 2px 0; line-height:1.6;}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">INITIATE SPORTS</div>
+  <h1>暑期班課表</h1>
+  <div class="sub">專業 · 科學化 · 國際青少年教學框架</div>
+</header>
+<div class="wrap">
+  <div class="intro">
+    本系統收錄 <b>羽毛球、匹克球、籃球、田徑、體操</b> 五個暑期班的 <b>7 節初學者課表</b>。每套課表均依據該運動的<b>國際公認青少年教學框架</b>（BWF Shuttle Time、USA Pickleball / IPTPA、Jr. NBA / FIBA、World Athletics Kids' Athletics、體操 FUNdamentals）設計，循序漸進、遊戲化、以運動學習科學為本，並按本公司學員實際年齡（小學初學者）調整。每節列明<b>學習目標、熱身、主要內容、遊戲、教練要點、科學原理</b>，附已查證的官方參考連結與教學影片。
+    <div class="note">＊撳每節標題可展開詳情。花式跳繩班由教練親自設計，不在此收錄。</div>
+  </div>
+  <div class="tabs" id="tabs"></div>
+  <div id="content"></div>
+  <div class="foot">
+    INITIATE SPORTS · 暑期班課表<br>
+    課表為教學藍本，教練可按學員實際情況分層調整 · 安全第一
+  </div>
+</div>
+<script>
+const THEME = {
+  bad:{c:'#0090a8', g:'linear-gradient(135deg,#0090a8,#004a58)'},
+  pkl:{c:'#5a9a38', g:'linear-gradient(135deg,#5a9a38,#2d5018)'},
+  bball:{c:'#2a50a0', g:'linear-gradient(135deg,#2a50a0,#0a1840)'},
+  ath:{c:'#e03c1e', g:'linear-gradient(135deg,#e03c1e,#801408)'},
+  gym:{c:'#9040c0', g:'linear-gradient(135deg,#9040c0,#4a1070)'}
+};
+const DATA = {
+  bad:{ name:'羽毛球', emoji:'🏸', framework:'依據 BWF Shuttle Time（世界羽聯官方校園羽毛球課程）',
+    chips:['對象：小一＋（約7–12歲）','全期 7 節 × 2 小時','師生比 1:6','初學者'],
+    intro:'以 BWF Shuttle Time 為框架，遵循運動學習「由簡到繁、由固定到變化、由封閉到開放」原則：先用平衡氣球、近距離拋擲建立成功經驗與正確握拍（grip），再逐步加入空間判斷、移動與對抗。每節 70% 以上時間以遊戲化方式練習（7–12 歲在「玩中學」時專注力與動作保留率最高）；多球（multi-feed）訓練提供高密度重複，加速神經肌肉記憶（automaticity）。',
+    safety:['器材：兒童輕量球拍（約 80g 以下）、慢速羽毛球／塑膠球（延長滯空便於反應）、標誌碟、低網、平衡氣球（首節用）','場地：開課前檢查地面是否濕滑、鞋帶、緩衝區；每人至少一臂揮拍距離，避免揮拍碰撞','身體：每節動態熱身＋收操拉伸；overhead 前先熱肩；提醒「揮拍前先望左右」','補水：每 25–30 分鐘 water break（暑期防中暑）'],
+    assess:'持續觀察（能做到／部分做到／需協助）每節記錄握拍、發球、高遠球、步法；第 4 節做半期小檢（發球入區次數、連續對拍次數），第 7 節結業挑戰賽＋技術 checklist；結業給家長簡短個人評語（強項＋下階段建議）。',
+    lessons:[
+      {t:'認識羽毛球 ＆ 握拍與拍感',sub:'Grip & Racket Control',o:'能正確示範正手（握手式）與反手（拇指頂）握拍；能控球維持平衡。',w:'標誌碟「紅綠燈」跑動 + 動態關節活動（肩、腕、踝）。約 15 分鐘。',m:['球拍當「平底鍋」，拍面平放氣球／慢速球，邊走邊維持不掉','正手握拍連續向上墊球（self-rally）；反手同樣練','「轉拍」：拇指滾動由正手轉反手 grip'],g:'氣球接力賽 — 拍面托氣球繞 cone 不掉落。',cues:['同球拍握手','手指放鬆唔好握死','拍面望天托波'],s:'grip 是所有技術的根；先用氣球／慢速球放慢節奏，降低認知負荷，讓初學者在封閉、可控環境先成功。'},
+      {t:'反手發球 ＆ 近網擊球',sub:'Serve & Net Area',o:'能做反手低發球把球送入對面發球區；能近網把球打過低網。',w:'拍面托球競走 + 影子揮拍（shadow swing）。約 12 分鐘。',m:['反手發球分解：拇指 grip → 球在拍前 → 輕推過網（先求入區不求力）','近網對教練拋球，正手輕擊回','發球入「呼拉圈目標」計分'],g:'「發球射龍門」— 對面分區，命中得分。',cues:['球放拍前面','輕輕推唔好掃','望住目標先發'],s:'Shuttle Time 把發球與近網列為最早技術，因動作幅度細、成功率高，能快速建立信心並理解「過網入區」目標。'},
+      {t:'移動步法基礎',sub:'Footwork & Movement',o:'能做 split-step 起動，並用「上網一步、後退回中」的節奏移動。',w:'反應遊戲（教練手勢指方向，學員起動）+ 踝膝熱身。約 15 分鐘。',m:['中心點（base）概念：每次擊球後回中','上網步：交叉／並步上前撿 cone 上的球','後退步：側身後撤觸標誌再回中','「米字步」簡化版（四角 → 中心）'],g:'「四角搶球」反應賽，教練叫角號學員衝去摸。',cues:['落地輕、膝頭軟','打完即刻返中間','望波先郁腳'],s:'先把移動與擊球分開練（part practice），待步法自動化後再合併，符合「先動作骨架、後加複雜度」的學習序列。'},
+      {t:'正手高遠球 ＋ 半期檢查',sub:'Forehand Overhead Clear',o:'能用 overhead 動作把球高而遠地打回後場。',w:'擲球過頂（mimic throwing）熱肩 + 影子高遠球。約 15 分鐘。',m:['「投擲動作」遷移：先做網球式上手擲球，感受側身、轉體、揮臂','教練近距離拋高球，學員定點 overhead 擊高遠','加入「擊球後回中」連結步法','半期檢查：發球入區次數 + 連續對拍次數記錄'],g:'「打高過繩」挑戰 — 球須越過高拉的繩／高度線。',cues:['側身、手肘高','好似掟石仔咁掟出去','擊球點喺頭頂前上方'],s:'overhead 最難、需肩部協調，故放中段、待 grip 與肩熱身成熟才教；用「擲球」作生物力學遷移加速學習。'},
+      {t:'正反手綜合 ＆ 多球訓練',sub:'Forehand/Backhand & Multi-feed',o:'能在連續餵球下快速切換正／反手擊球並回中。',w:'左右移動 + 正反手影子揮拍交替。約 12 分鐘。',m:['多球：教練連續快餵，學員定點正手 → 反手交替回擊（每組 10–15 球）','反手近網挑球（backhand lift）入門','多球結合一步移動（餵左餵右）'],g:'「多球闖關」— 連續成功回擊 X 球即過關升級。',cues:['拇指頂住打反手','打完即還原 ready position','眼追波'],s:'多球提供短時間高重複（massed reps），是建立自動化最有效方法；正反手交替引入變化練習，提升日後比賽適應力。'},
+      {t:'對打與回合',sub:'Rallying & Open Play',o:'能與同伴維持連續多拍 rally，並在移動中選擇正／反手。',w:'合作墊球（兩人維持不落地）+ 動態移動。約 12 分鐘。',m:['合作式 rally：目標「一齊打到最多拍」（合作而非對抗）','半場高遠球對拉 + 回中','簡單「發球 → 回球 → 再回」三拍組合'],g:'「最長回合擂台」— 全班記錄最多連續對拍數，挑戰刷新。',cues:['打去對方打得到嘅位','每拍之後返中','放鬆、節奏先'],s:'由封閉（餵球）轉向開放（真實對手）是學習關鍵跳躍；先用合作式 rally 降低對抗壓力，讓技術在動態中穩定。'},
+      {t:'小型比賽 ＆ 結業挑戰',sub:'Mini-Games & Assessment',o:'能在簡化規則下完成比賽、應用發球與基本戰術（把球打去空位）。',w:'趣味移動遊戲 + 全身動態熱身。約 12 分鐘。',m:['簡化規則講解（發球、界線、計分）','半場／短場單打輪賽（round-robin），人人有得打','「打空位」基礎戰術引導','結業評估：技術 checklist + 比賽表現觀察'],g:'班內小型錦標賽 + 頒「進步獎／技術獎」。',cues:['打去佢冇人嗰邊','輸贏唔緊要，享受比賽','發球穩陣先'],s:'比賽是最高層次的開放技能整合，也是維持兒童內在動機的關鍵；遊戲化結業讓學員在正向情緒中收結，提升續班意願。'}
+    ],
+    refs:[
+      {title:'BWF Shuttle Time — 官方網站',url:'https://shuttletime.bwfbadminton.com/',type:'官方框架'},
+      {title:'BWF Shuttle Time — Lesson Plans（22 份分級課程計劃）',url:'https://shuttletime.bwfbadminton.com/lesson-plans',type:'官方課程'},
+      {title:'BWF Shuttle Time — Video Clips（92 條官方示範短片）',url:'https://shuttletime.bwfbadminton.com/video-clips',type:'教學影片'},
+      {title:'BWF Development — YouTube 官方頻道',url:'https://www.youtube.com/c/BWFDevelopment',type:'教學影片'},
+      {title:'Shuttle Time — Lesson Walkthrough & Court Set Up',url:'https://www.youtube.com/watch?v=AQR0p2cbVAY',type:'教學影片'}
+    ]},
+
+  pkl:{ name:'匹克球', emoji:'🥒', framework:'依據 USA Pickleball 官方規則／青少年資源 ＋ IPTPA Level I 教學進程',
+    chips:['對象：小一＋（約7–12歲）','全期 7 節 × 1 小時','師生比 1:6','初學者'],
+    intro:'核心理念「Fun before form, play to learn」：先玩出興趣，再雕琢動作。科學化進程——由近至遠、由慢至快（先教近網慢速 dink，較易掌握「軟手」控制，底線快球留後）；用同一個「肩膊鐘擺式揮拍引擎」貫穿所有擊球，減少動作記憶負荷；複雜規則（two-bounce、kitchen、計分）拆散到 7 節逐步加入，配合即時遊戲應用，符合兒童認知負荷理論。',
+    safety:['器材：兒童輕量拍（約 7–7.3 oz、短柄）、高對比黃／橙球（初期可用低彈泡棉球降速）、可調低球網、地膠標示 kitchen 線、計分牌','安全：每節動態熱身（匹克球常見手腕、腳踝、跟腱負荷）；強調 kitchen 區「停步」既是規則也是防撞概念','場地：無雜物、散球及時收拾（滑倒主因）；補水、注意通風／防曬','分組：1:6 下 drills 以小組輪轉（每組 2–3 人一面網），確保高擊球量與教練視線覆蓋'],
+    assess:'形成性（每節 play-based）：觀察握拍、姿勢、動作；量化「成功指標」逐節記錄破自己紀錄（dink 連續回合、發球入界、volley 成功擋球）。總結性（第 7 節）：dink ≥4 回合、10 球發球 ≥6 合法入對角、正反手各 ≥5 球過網入界、能正確完成 two-bounce 開局、能口述 kitchen／two-bounce／計分規則、能參與完成一局小賽。以「個人進步＋能否參與真實比賽」為主，不與同儕比較。',
+    lessons:[
+      {t:'認識匹克球・器材與基本姿勢',sub:'Equipment & Ready Position',o:'認識球拍／球／球場；掌握 continental（基本）握拍與 ready position；建立控球手感。',w:'慢跑繞錐 + 動態伸展（手腕繞環、弓步、側併步）；「跟我做」反應遊戲。約 8 分鐘。',m:['握拍：continental「握手式」','平衡彈球：拍面向上連續向上顛球（數 touches）','拍面向下拍地彈球','互相隔線輕推球（無網，建立觸球感）','認識球場：baseline、sideline、kitchen 線（用腳走一圈）'],g:'「顛球大挑戰」：看誰連續顛球最多下，逐節破紀錄。',cues:['握手式握拍','眼睛盯住球到拍','拍面像一塊平板'],s:'先建立握拍與觸球感（proprioception），不上網不計分，降低認知負荷，純累積成功 touches。'},
+      {t:'Dink 與廚房（Non-Volley Zone）',sub:'Dink & Kitchen',o:'認識 kitchen 規則；學會 dink（近網軟擊球），建立 IPTPA「肩膊鐘擺式」揮拍基礎。',w:'動態熱身 + 「kitchen 紅綠燈」：教練叫「kitchen!」全體跳出 NVZ 線。約 8 分鐘。',m:['規則：kitchen 是網兩側各 7 呎區域，不可在區內或踩線截擊（volley）；球落地後可入內擊球','dink 分解：低姿、拍面微開、由肩膊輕推、follow through 向目標','無球影子揮拍 → 隔網對 dink（數連續回合）→ cross-court dink'],g:'「Dink 接龍」：小組合作連續 dink 不落地，挑戰最長 rally。',cues:['軟手、輕推、唔好打','拍由膊頭出，唔好用手腕','蹲低、眼睛同網一樣高'],s:'IPTPA 核心：dink 引入鐘擺式揮拍，低速下最易學「軟手控制」與耐性，且大部分擊球是 dink，越早建立越好。'},
+      {t:'發球（Serve）與接發球（Return）',sub:'Serve & Return',o:'掌握合法低手發球；學會接發球並打回對角；理解發球規則。',w:'動態熱身 + 拋接球手眼協調遊戲。約 8 分鐘。',m:['規則：必須低手、觸球點低於腰、拍頭低於手腕、向上弧線、發向對角發球區','發球分解：拋低球 → 鐘擺式由低向上掃 → 送向對角（先求入界）','目標發球：對角區放錐／呼拉圈當靶','接發球：站近 baseline，讓球落地後底線回擊（連接 two-bounce）'],g:'「發球射靶賽」：發中對角目標得分，小組累積。',cues:['拍頭向下、由低掃上','打對角，唔打正前','先入界，後加力'],s:'發球是唯一可從容預備的擊球，先固定動作模式；目標導向（external focus）比叫「用力」更易學。'},
+      {t:'正反手底線擊球',sub:'Groundstrokes',o:'建立正手、反手底線擊球；學會落地後穩定回擊與步法到位。',w:'動態熱身 + 側併步／分腿墊步（split step）反應。約 8 分鐘。',m:['正手：側身、低姿、由後向前鐘擺、隨揮指向目標','反手：雙手或單手，同樣肩膊發動','多球餵球：每人連續正手 8–10 球，再反手 8–10 球','左右移動接球：練 split step + 移位'],g:'「過網入界積分」：連續成功 5 球升一關。',cues:['側身、早啲準備拍','低位接、向上送','打完拍指向目標'],s:'多球（massed practice）在初期極大化擊球量與重複，加速正反手定型；split step 建立反應預備。'},
+      {t:'兩次落地規則與串連',sub:'Two-Bounce Rule',o:'理解並執行 two-bounce rule；把發球→接發→底線串成完整 rally 開局。',w:'動態熱身 + 「落地一下先打」反應遊戲。約 8 分鐘。',m:['規則：發球後接發方要讓球落地一次才回擊；發球方回擊時亦要先讓球落地一次；之後才可截擊','慢速 3 球串連：發球 → 對手落地回底線 → 發球方落地回擊（教練數「彈、彈，OK」）','結合 dink：底線回完後雙方上前進入 dink'],g:'「合法開局挑戰」：哪組能正確完成「發球→兩次落地→第三球」最多次。',cues:['頭兩球一定要彈一下','唔好衝上網截第一球'],s:'two-bounce 是最易違規處；用「彈、彈」口訣＋身體節奏，把抽象規則轉成可執行的節奏線索。'},
+      {t:'截擊（Volley）與網前轉換',sub:'Volley & Net Play',o:'學會合法 volley（kitchen 線外）；分辨 volley／dink／groundstroke 時機；建立網前 ready position。',w:'動態熱身 + 快速反應拍掌／接球遊戲。約 8 分鐘。',m:['volley 動作：拍在身前、短而結實的「擋」，不大揮，雙腳在 kitchen 線後','規則複習：volley 時不可踩線、衝勢入區亦判失分','餵球 volley：教練快餵，學員於 NVZ 線後連續擋回','dink ↔ volley 過渡：低球 dink、高球 volley 的判斷'],g:'「網前守門員」：擋下教練連續餵球，計成功擋球數。',cues:['拍喺身前、短擋、唔好揮大','腳唔好過線','高球擋、低球 dink'],s:'volley 要求快反應與短動作控制，放在手感與規則成熟後教；強化「kitchen 不可截擊」的規則與安全雙重意義。'},
+      {t:'計分規則與小型比賽',sub:'Scoring & Mini-Games',o:'理解雙打計分（side-out）；綜合運用全部技術，完成有規則、有計分的小型比賽。',w:'動態熱身 + 全期技術快速複習輪（dink、發球、底線、volley 各 1 分鐘 station）。約 8 分鐘。',m:['計分：傳統 side-out——只有發球方可得分，打到 11 分需淨勝 2 分；雙打報三個數「發球方分–接發方分–第幾發球員」，例「0-0-2」開局','2v2／輪轉小賽（短局至 5 或 7 分先導入），教練即場引導報分、two-bounce、kitchen 規則','畢業挑戰賽 + 頒完成證書／小獎勵'],g:'小組循環賽，勝負次要，重在完整對打。',cues:['淨係發球方先有分','報分讀三個數','記住頭兩球要落地'],s:'把零散技術整合進比賽情境（game-based learning）是學習遷移關鍵；計分留最後，因認知負荷最高且需先有對打能力才有意義。'}
+    ],
+    refs:[
+      {title:'Essential Pickleball Rules Summary For Beginners — USA Pickleball',url:'https://usapickleball.org/rules/summary/',type:'官方規則'},
+      {title:'Junior And Youth Pickleball — USA Pickleball',url:'https://usapickleball.org/juniors/',type:'官方青少年'},
+      {title:'Educator Resources For Schools & Youth — USA Pickleball（分齡課程＋教學影片）',url:'https://usapickleball.org/educators/',type:'官方課程'},
+      {title:'Training Overview — IPTPA（Level I 教學框架）',url:'https://iptpa.com/training-overview/',type:'官方框架'},
+      {title:'Pickleball Rules Explained for Beginners — The Dink',url:'https://www.thedinkpickleball.com/pickleball-rules-explained-for-beginners-2026/',type:'規則詳解'}
+    ]},
+
+  bball:{ name:'籃球', emoji:'🏀', framework:'依據 Jr. NBA / Jr. WNBA Curriculum、FIBA WABC Mini-Basketball、BEEF 投籃、Triple Threat',
+    chips:['對象：小一＋（約6–12歲）','全期 7 節 × 1 小時','師生比 1:10','初學者'],
+    intro:'採「ABC + 籃球專項」雙軌模型：6–12 歲是動作學習黃金期，每節熱身嵌入 ABC（敏捷／平衡／協調），打好身體基礎，技術自然事半功倍。教學用 Game-Based／Guided-Discovery（少排隊、多觸球、多遊戲）；進程由球感→運球→傳接→投籃→防守→對抗→比賽，符合「由簡至繁、由靜至動、由個人至對抗」。貫穿全期：分散練習＞集中操練、外在專注點（看籃框）提升投籃、遊戲化提高內在動機與留隊率。',
+    safety:['籃球：Size 5（9–12 歲，約 470g）為主，手細可備少量 Size 4','籃框：8 ft（2.44m）為主，10–12 歲較高大可調至 9 ft','場地：小組分區（每組約 5m×9m），留安全緩衝；地面乾爽、無雜物','器材：標誌筒、敏捷梯、分隊背心、軟墊、哨子；一人一球＝最大觸球次數','每節結構：熱身（含 ABC ~10min）→ 主要技術 ~25min → 遊戲／對抗 ~18min → 收操回顧 ~7min'],
+    assess:'形成性＋總結性雙軌，重「進步」多於排名。技術 rubric（運球、傳接、BEEF 投籃形態、防守滑步）分初現／發展中／穩定，第 1 節基線→第 7 節對照；ABC 簡測（之字運球計時、定點傳球準度、單腳平衡秒數）首尾對比；6–7 節觀察比賽意識與合作。原則：process over outcome，不以入球數或勝負評斷小朋友。可給家長一頁式「成長卡」。',
+    lessons:[
+      {t:'球感與基礎運球',sub:'Ball Handling & Dribbling',o:'建立對球的信心、用指尖控球、抬頭運球（眼向前）。',w:'敏捷梯入步（agility）；單腳站立傳球（balance）；原地球感操—腰繞球、胯下 8 字、拋接拍手（coordination）。',m:['指尖拍球（pound dribble）原地，左右手各 20 下','高低運球：腰高→膝高→腳踝高，感受力度','紅綠燈運球：教練喊綠行／紅停／黃慢，練停球與抬頭'],g:'Dribble Tag / Pac-Man——邊運球邊在界線上互捉。',cues:['指尖、唔好睇住個球','波低一啲、護住佢'],s:'先建立 ball familiarity 與本體感覺，抬頭運球是日後球場視野（court vision）的基礎。'},
+      {t:'雙手運球與換手',sub:'Two-Hand Control & Crossover',o:'弱手運球、學會基本換手過人、運球中保持平衡。',w:'Z 字繞筒跑（agility）；運球中急停單腳定（balance）；雙球交替拍（coordination）。',m:['弱手專項：弱手原地拍 30 下 + 弱手直線運球','體前換手（crossover）：原地 V 字 → 行進間過筒','Zig-zag 之字運球：沿筒換手變向，模擬閃避'],g:'Knock-Out / 運球擂台——圈內護球並嘗試拍走對手的球。',cues:['低、快、護球手擋住','換手球要過得低過膝'],s:'雙側發展（bilateral）防止只靠強手；變向訓練培養敏捷與決策速度。'},
+      {t:'傳接球',sub:'Passing & Receiving',o:'掌握胸前傳球與擊地傳球、接球時手做「靶」、傳球後走動。',w:'兩人對牆傳球；接球後單腳落地穩住（balance）；左右手交替擊地傳（coordination）。',m:['胸前傳球：拇指向下、跟手指向目標','擊地傳球：落點約 2/3 距離','Star 星形傳球：5 人星形傳接 + 傳完跟去下一位（pass-and-move）'],g:'Keep Away / 傳波唔畀捉（3v1 或 4v1）——10 傳得分。',cues:['手指張開做個靶','傳完即郁，唔好企定'],s:'pass-and-move 建立無球跑動與空間感，是比賽意識起點。'},
+      {t:'投籃 BEEF 與上籃',sub:'Shooting & Lay-up',o:'用 BEEF 原則定型投籃、掌握近距離投籃與基本上籃步。',w:'跳繩／原地彈跳；投籃前手腕／肩活動；牆上 follow-through 練習。',m:['BEEF 定型：Balance（腳與肩同寬）、Eyes（望籃框前緣）、Elbow（手肘對正成 L）、Follow-through（跟手 gooseneck）。先無球→近框 1 步投','Form shooting：籃框正下方近距離純練手形，不追入波','上籃：原地「一步、跳、放」→ 慢走兩步上籃（先不運球），用 8ft 框'],g:'Around the World（近距離版）+ BEEF 投籃計分賽（動作正確就加分）。',cues:['B-E-E-F！','手指向下、似伸手攞餅','望籃框唔好望個球'],s:'定型期重「動作質素＞入球率」（process over outcome）；外在專注點（望籃框）經研究比想手肘命中更高。'},
+      {t:'防守基礎',sub:'Defensive Fundamentals',o:'學會防守姿勢、滑步、保持人球之間、不伸手犯規。',w:'防守滑步配合敏捷梯（agility）；低位深蹲穩住（balance）；鏡子模仿步（coordination）。',m:['防守姿勢：屈膝、低重心、手張開、抬頭','防守滑步：左右、前後滑，腳不交叉','Mirror Drill：進攻者左右移動，防守者影住滑步'],g:'Zone Tag / 防守捉人 + 1v1 影子賽（跟到 5 秒得分）。',cues:['低、闊、手張開','腳唔好交叉','跟住佢個肚臍'],s:'低重心滑步發展核心穩定與橫向移動，亦培養專注與紀律；防守是 6–12 歲常被忽略的基礎。'},
+      {t:'1v1 與 2v2 對抗',sub:'Triple Threat & Small-Sided',o:'整合運球—投籃—防守、學 triple threat 持球、初嘗 2v2 合作。',w:'反應啟動遊戲（教練手勢決定方向）；triple threat 接球定位。',m:['Triple Threat 三威脅：接球即成「可投／可傳／可運」姿勢，球護於髖側、屈膝','1v1：由 triple threat 出發，一次突破上籃；攻守輪換','2v2：簡單 give-and-go（傳波就走），鼓勵傳球不獨食'],g:'1v1 King of the Court + 2v2 迷你賽（進球換組），強調合作。',cues:['接到波即三威脅','傳完即切入','叫名要波'],s:'small-sided games 令每人觸球、決策次數遠多於全場，是 Jr. NBA／FIBA 公認最有效的比賽意識培養法。'},
+      {t:'小型比賽日',sub:'Game Day & Festival',o:'將所學用於 3v3／4v4 真實比賽、體驗團隊合作、總結評估。',w:'全期最愛遊戲集合（運球捉人＋星形傳球），輕鬆啟動。',m:['技術回顧站（circuit）：運球、傳球、BEEF 投籃、上籃 4 站，每站 3 分鐘','3v3／4v4 半場小賽：簡化規則（強調傳球、人人持球）','Jr. NBA Skills Challenge 迷你版：運球計時、傳球準度、投籃命中'],g:'分隊命名，頒「最佳隊員／最大進步／最佳團隊精神」，家長可觀賽。',cues:['傳波、合作、開心','記住 BEEF','輸贏唔緊要，尊重對手'],s:'以比賽收結提供「能力展示」滿足感，鞏固動機與歸屬感，提高持續運動意願。'}
+    ],
+    refs:[
+      {title:'Jr. NBA — Starter Practice Plans',url:'https://jr.nba.com/basketball-practice-plans/starter/',type:'官方課程'},
+      {title:'Jr. NBA / Jr. WNBA Instructional Curriculum',url:'https://jr.nba.com/jr-nba-instructional-curriculum/',type:'官方框架'},
+      {title:'Jr. NBA Skills Challenge（技術評估架構）',url:'https://jr.nba.com/skillschallenge/',type:'官方評估'},
+      {title:'FIBA WABC — Mini-Basketball Coaches Manual',url:'https://wabc.fiba.com/manual/mini-basketball/',type:'官方手冊'},
+      {title:'USA Basketball — Youth Basketball Guidelines（球號／籃框高度）',url:'https://www.usab.com/play/youth-basketball-guidelines',type:'器材指引'}
+    ]},
+
+  ath:{ name:'田徑', emoji:'🏃', framework:'依據 World Athletics（前 IAAF）Kids’ Athletics 框架 ＋ LTAD（ABC / FUNdamentals）',
+    chips:['對象：3歲＋（實際約5–12歲）','全期 7 節 × 1 小時','師生比 1:12','初學者'],
+    intro:'以 World Athletics Kids’ Athletics 為核心藍本，刻意脫離成人田徑模式，把田徑拆成「跑、跳、擲」三大事件群組加耐力，讓兒童在任何平地都能玩。核心原則：① 避免過早專項化（每人都參與全部群組）；② ABC + FUNdamentals 為地基（敏捷／平衡／協調，遊戲化教授）；③ 團隊化、人人有份（跳與擲計團隊總分）；④ 由技術主導 → 速度敏捷 → 遊戲化耐力 → 綜合運動會，先建立正確動作模式再疊加強度。',
+    safety:['擲項分區管理最重要：劃清擲區與拾取區，「統一口令、統一方向、口令先擲、口令先拾」，絕不站在擲區前方','跳項落地一律用沙池／軟墊，教「屈膝吸震」','每節充分動態熱身與緩和；香港暑期每 15–20 分鐘補水、避免正午暴曬','1:12 下以分組站式進行，每站清晰邊界；5–7 歲與 8–12 歲必要時分組降低碰撞','器材：標誌筒、平梯、呼拉圈、跳繩、軟式低欄、軟標槍／Turbo-Jav、沙包、軟球、接力棒、量距捲尺、軟墊'],
+    assess:'過程為主、結果為輔。動作技能檢核表（跑姿、立定跳／助跑起跳、投擲鞭打、ABC，每節 ✓／進行中）；前後測（第 1 vs 第 7 節：立定跳遠、軟標槍距離、20m 衝刺，只對 8–12 歲作個人 PB，不互相排名）；第 7 節團隊賽觀察綜合運用；態度與參與（投入、打氣、守安全）列入「最佳精神／最大進步」；家長簡短文字回饋銜接恆常班。',
+    note:'年齡跨度大——5–7 歲重遊戲、模仿、ABC，用圖像化比喻、全隊完成就贏；8–12 歲加技術 cues、計時／計距離、個人最佳（PB）。同一活動分層（differentiation）。',
+    lessons:[
+      {t:'跑的基礎：跑姿與「會跑」',sub:'Run Tall',o:'建立正確直線跑姿與手臂擺動；認識身體中線；ABC 入門。',w:'動物模仿走（熊爬、螃蟹、青蛙跳）；A-March（高抬膝行走，腳尖勾起）；直腿擺動走；原地高抬膝。',m:['Run Tall：頭頂想像「一條線吊住」，挺直軀幹原地跑 → 行進跑','手臂擺動：坐地「前後拉繩」練手肘 90°、放鬆肩膊','20m 輕鬆加速跑 ×4，只看姿勢不計時'],g:'紅綠燈——綠燈跑、紅燈定格平衡（Balance + 反應）。',cues:['企高啲（Run tall）','手袋去後袋','肩膊放鬆','腳尖向上'],s:'先固定跑姿動作模式，避免高速時錯誤定型；A-drills 是國際通用跑步技術啟蒙，建立髖屈與踝關節剛性。'},
+      {t:'起跑與加速',sub:'Acceleration',o:'學會起跑反應、前傾加速（lean）、步頻。',w:'A-Skip（節奏高抬膝跳）入門、側併步、後踢臀跑（butt kicks）。',m:['各種姿勢起跑：坐地、趴地、背向 → 聽信號彈起跑 10m','前傾牆壁 drill（wall drive）：手扶牆／隊友，身體前傾交替推蹬','10–15m 加速跑，頭幾步身體前傾不即刻企直'],g:'鯊魚追小魚——聽到「鯊魚！」即起跑逃到安全區（反應＋加速）。',cues:['聽到聲先郁','頭三步身體斜（lean）','大力推地','步步向前唔好向上跳'],s:'加速階段身體應前傾以延長水平推進力（impulse）；用多種起跑姿勢刺激反應時與本體感覺。'},
+      {t:'跳（一）：立定跳與彈跳',sub:'Standing Jump & Hops',o:'掌握立定跳遠的擺臂—下蹲—伸展—落地節奏；建立單／雙腳彈跳協調。',w:'跳繩節奏跳、原地連續小跳（pogo）、單腳平衡定格。',m:['立定跳遠：擺臂後拉 → 屈膝下蹲 → 全身爆發伸展 → 軟膝落地','Cross Hopping（Kids’ Athletics 招牌）：十字／格仔間前後左右連續跳，練方向與單腳穩定','跳箱／跳圈落地：「飛機落地」屈膝吸震'],g:'青蛙過河接力——全隊用立定跳一格格過「荷葉」，最快過河贏。',cues:['手向後再向前掟','蹲低先彈高','青蛙腳軟軟落地','眼望前方'],s:'立定跳是下肢爆發力與協調基礎，先學擺臂同步與安全落地力學，降低受傷風險。'},
+      {t:'跳（二）：跳遠助跑與起跳',sub:'Long Jump Approach',o:'把加速 + 彈跳結合，學助跑節奏與單腳起跳上板。',w:'A-Skip、跨步跳（bounding，大童）、行進弓步。',m:['數步助跑：用 5–7 步固定助跑，最後一步「快而短」起跳','起跳腳辨認：跳上小箱／跨矮欄，找出慣用起跳腳','「跑—跳—飛—落」：助跑 → 單腳踏起跳區 → 空中收腳 → 雙腳安全落沙／墊'],g:'跳過小河——兩繩做「河」由窄到闊漸進，全隊挑戰最闊（分層、無淘汰）。',cues:['最後一步快啲','起跳腳大力撐','向前向上飛','雙腳一齊落'],s:'跳遠是水平速度轉化為垂直騰空；先固定助跑節奏與單腳起跳，避免亂跳致踝膝受傷。'},
+      {t:'擲：基礎投擲動作',sub:'Throwing',o:'學基礎投擲的力量傳遞鏈（下肢→軀幹→手臂鞭打）；認識安全擲區規則。',w:'肩膊環繞、軀幹旋轉、輕拋接球熱身。',m:['過頂投擲（軟標槍／foam javelin，大童用 Turbo-Jav）：同手同腳企側、手拉後、踭高過肩、向上向前掟','雙手過頂擲軟球／藥球向前向上：練全身發力與核心','單手推擲（鉛球啟蒙，用軟球）：「推唔係掟」，由頸邊推出'],g:'擲入目標區計分——軟標槍／沙包擲入不同距離呼拉圈，全隊累積（團隊計分）。',cues:['聽口令先擲，聽口令先去拾','永遠向同一方向擲','踭要高','向天向前，唔好向地'],s:'投擲是由地面反作用力經動力鏈傳到器械的鞭打；用輕器械先學順序與安全，避免肩肘代償。安全分區是擲項教學核心。'},
+      {t:'速度、敏捷與遊戲化耐力',sub:'Speed, Agility & Endurance',o:'整合 ABC；以遊戲方式建立耐力，避免單調長跑。',w:'A-Skip、快腳梯（ladder）原地、Z 字側移。',m:['敏捷迴路：標誌筒繞行（slalom）、快速變向、低欄跨步','Formula One（Kids’ Athletics 招牌）：障礙循環（衝刺直道 → 跨低欄 → 繞筒 → 鑽圈／前滾翻），接力棒形式全隊輪流，計全隊圈數'],g:'Formula One 全隊接力賽 2–3 輪；細路減障礙、縮短道。',cues:['轉彎時身體稍微傾向內','細步快腳先轉得快','為隊友打氣'],s:'間歇式遊戲（interval play）比連續長跑更適合兒童能量系統與專注力；Formula One 同時刺激敏捷、協調與心肺。'},
+      {t:'綜合迷你運動會',sub:'Kids’ Athletics Mini Meet',o:'在團隊賽中綜合運用跑、跳、擲；體驗成功、慶祝參與；評估成果。',w:'以遊戲化全身熱身帶氣氛（音樂熱身操）。',m:['跑站：短衝刺接力／往返跑','跳站：立定跳遠 + Cross Hopping 計團隊總距／總數','擲站：軟標槍／Turbo-Jav 入區計分','耐力站：Formula One 接力'],g:'分隊累積總分，所有項目計團隊分，人人有貢獻（無淘汰）。設「最佳精神／最大進步獎」。',cues:['為隊友打氣','鼓勵嘗試多於名次'],s:'團隊計分制讓不同能力學員都有價值，強化內在動機與運動黏性；綜合評估各群組能力。'}
+    ],
+    refs:[
+      {title:'IAAF Kids’ Athletics — A Practical Guide（官方教學指南 PDF）',url:'https://worldathletics.org/download/download?filename=22f20cae-d655-4f86-9dc3-140a1f529796.pdf&urlslug=IAAF+Kids',type:'官方手冊'},
+      {title:'World Athletics — Formula One（Teaching Athletics）',url:'https://worldathletics.org/en/kids-athletics/teaching-athletics/formula-one',type:'官方活動'},
+      {title:'World Athletics — IAAF Kids’ Athletics Programme',url:'https://worldathletics.org/news/iaaf-news/iaaf-kids-athletics-programme-2',type:'官方框架'},
+      {title:'NSCA — The ABCs of Long-Term Athletic Development',url:'https://www.nsca.com/education/articles/nsca-coach/abc-of-long-term-athletic-development/',type:'科學文章'},
+      {title:'World Athletics 官方 YouTube 頻道（Kids’ Athletics 示範）',url:'https://www.youtube.com/@WorldAthletics/videos',type:'教學影片'}
+    ]},
+
+  gym:{ name:'體操', emoji:'🤸', framework:'依據 體操 FUNdamentals / Gymnastics for All、LTAD / FMS、AAP・AAOS 安全指引',
+    chips:['對象：小一＋（約6–11歲，多7–9）','全期 7 節 × 1 小時','師生比 1:6','初學者'],
+    intro:'依國際公認青少年體操與長遠運動員發展框架：6–9 歲屬 FUNdamentals 階段，重「玩中學」、建立基礎動作技能而非專項成績。每節貫穿體操 ABC（敏捷／平衡／協調）。核心是「身體形狀優先」——先掌握五大基本形狀 Tuck／Pike／Straddle／Hollow／Arch，因所有翻滾、倒立、側手翻都是這些形狀的組合；形狀穩固，動作才安全。每個動作拆成可獨立掌握的小步（progressions），「真正做到並能控制」才進下一步，不跳級；先學「跳—落—定格」安全著地，再學任何離地動作。',
+    safety:['⚠️ 頸椎保護（最高優先）：前滾翻嚴禁用頭頂著地，必須「低頭、下巴貼胸、後腦先碰墊、後背圓弧滾動」','⚠️ 手腕保護：兒童體操最常見過勞傷，倒立／側手翻採短時間、分組輪流，熱身務必含手腕繞環與承重漸進','⚠️ 每個離地／倒置動作都要合資格保護（spotting）：教練須熟悉動作、持急救資格、全程監督','器材：landing mat 鋪滿練習區、斜坡墊（wedge，前滾翻／側手翻入門關鍵）、平衡線、牆身（靠牆倒立）、呼拉圈／豆袋；每節課前檢查墊面平整無縫隙','不跳級、個別化（按柔韌與膽量給不同難度，不硬比較）、正向語言'],
+    assess:'持續觀察每節記錄五大形狀掌握度（達標／需協助）；第 7 節以「技能護照」逐項打勾（前滾翻、靠牆倒立、側手翻嘗試、橋、跳躍落地定格）；三維評估＝技術（動作正確）＋體能（柔韌、核心）＋態度（自律、嘗試、信心）；不作排名，以個人進步為本，給家長簡短成長回饋。',
+    lessons:[
+      {t:'認識身體形狀與安全著地',sub:'Shapes & Safe Landing',o:'認得並做出 Tuck／Pike／Straddle／Hollow／Arch；學會屈膝安全落地。',w:'動物步行（熊爬、螃蟹、兔跳）；頸／肩／腕／髖／踝逐關節繞環；核心：仰臥 hollow hold 5 秒 ×3。',m:['五大形狀逐個示範＋鏡像模仿，配口令圖卡','安全著地：原地小跳→屈膝、抬胸、雙手前伸「定格 3 秒」','由矮台往下跳＋穩定落地'],flex:'靜態伸展（每式 15–20 秒、不彈震）：坐位 pike 前伸、蝴蝶式、貓牛式活動脊柱。',g:'「形狀變變變」：教練叫形狀名，學員 3 秒內定格。',cues:['膝頭軟、抬起胸、唔好望地','（觀察膝蓋不內扣）'],s:'形狀是所有體操動作的「字母」；先學落地吸震，建立安全本能再離地。'},
+      {t:'滾動與前滾翻',sub:'Forward Roll',o:'安全完成前滾翻（低頭、圓背、起身）。',w:'動物步行；手腕承重漸進（四足跪撐左右移重心）；核心：船形搖擺。',m:['Tuck rocks：抱膝後背搖擺，感受圓背','搖起站立：搖到底借力站起','斜坡墊前滾翻：用 wedge 斜度，下巴貼胸、後腦先著、抱膝滾起 → 進步者移平墊'],flex:'脊柱活動（捲身—伸展）、後鏈：坐位 pike、站立摸腳趾（屈膝亦可）。',g:'「煎蛋捲」：身體當蛋捲滾過墊；「滾過山洞」目標導向。',cues:['下巴搵肚臍、圓背似皮球','Spotting：一手托後腦／頸，一手引導背部，嚴防頭頂著地'],s:'圓背令脊柱順序受力、分散衝擊；前滾翻是所有前向翻騰的根基。'},
+      {t:'平衡與靠牆倒立',sub:'Handstand at Wall',o:'完成靠牆 donkey kick；體驗靠牆倒立的身體繃直。',w:'平衡木上慢走；手腕重點熱身（繞環、掌撐前後搖）；核心：plank 10 秒 ×3。',m:['地面平衡：單腳站、足尖線上走、燕式平衡','Hollow 撐姿（front support）感受全身繃緊','Donkey kick：雙手撐地輕踢臀','靠牆倒立（面牆爬上 或 背牆踢上）：短時間 hold，直臂、收腹、夾耳'],flex:'肩帶柔韌：手杖／毛巾過頭繞肩；股四頭、小腿伸展。',g:'「金雞獨立比耐」；「影子模仿」平衡造型。',cues:['手指張開抓地、耳仔夾住手臂、肚收緊','Spotting：站側方托大腿／小腿控制下放；每人短時撐、輪流做保護手腕'],s:'倒立建立肩部承重與身體直線控制；靠牆降低恐懼、安全建立倒置本體感覺。'},
+      {t:'側手翻',sub:'Cartwheel',o:'完成分腿側手翻（可借輔助）。',w:'側向滑步、開合跳；手腕承重漸進；核心：side plank 嘗試。',m:['Straddle 形狀＋大字星造型','手—手—腳—腳節奏：跨過地面直線／低墊','沿膠帶直線做（手腳依次落線上）','斜坡墊輔助側手翻 → 進步者地面完成，強調分腿、過頭直臂'],flex:'分腿柔韌：坐位 straddle 前傾、側壓腿；肩部伸展。',g:'「跨過小河」（兩線間做）；「踢牆學踢腿」感受倒置瞬間。',cues:['手手腳腳、踢高腳、望住手','Spotting：站背後，交叉手扶髖部引導翻轉與保持方向'],s:'側手翻引入側向移動與單側手撐承重，發展雙側協調，為日後 round-off／walkover 鋪路。'},
+      {t:'橋與系統柔韌',sub:'Bridge & Flexibility',o:'在控制下完成橋（bridge）；理解科學伸展原則。',w:'全身動態活動；脊柱逐節活動（cat-cow、cobra）；核心：superman hold。',m:['Arch hold 俯臥抬手腳','半橋（glute bridge）：仰臥抬臀','完整橋：仰臥手放耳側、推起，循序、不勉強，柔韌足夠者才完整撐起','橋上輕微前後移重心'],flex:'本節重點——系統靜態伸展，每式 20–30 秒、緩慢、絕不彈震（no ballistic）：胸／肩開展、髖屈肌、後鏈、脊柱伸展，強調呼吸放鬆。',g:'「山洞隧道」同學爬過橋下；「伸展尋寶」配形狀卡。',cues:['推直手臂、抬高肚、肩膊向前','Spotting：托腰／背輔助推起與安全下放；柔韌因人而異，不比較不強壓'],s:'靜態伸展安全增加關節活動度；彈震式伸展易拉傷兒童肌腱故避免；橋發展脊柱伸展與肩部柔韌。'},
+      {t:'跳躍與落地',sub:'Jumps & Landings',o:'完成 tuck／straddle／star 跳並穩定落地定格。',w:'跳繩節奏、彈跳練習；踝關節重點熱身；核心：tuck hold。',m:['原地直跳＋落地定格複習','Tuck jump（空中抱膝）','Star jump / Straddle jump（空中分腿）','半圈轉體跳＋落地控制','低台跳下做指定形狀再落地'],flex:'下肢動態＋靜態：小腿、股四頭、髖；放鬆收操。',g:'「跳房子」配形狀；「火山跳」由墊跳到墊定格。',cues:['用腳掌彈、空中做形狀、落地即定格','（觀察落地膝蓋對齊腳尖、不內扣）'],s:'落地吸震技術（屈膝、軟踝）是體操防傷核心；空中做形狀訓練本體感覺與空間意識（air awareness）。'},
+      {t:'綜合組合與小展示',sub:'Showcase',o:'串連 3–4 個動作成簡單組合；建立自信公開完成。',w:'學員帶領式熱身（培養自律）；全身關節活動＋核心激活。',m:['分站複習：前滾翻站／靠牆倒立站／側手翻站／橋站（circuit）','設計個人小組合：例如 形狀定格→前滾翻→站起→側手翻→星跳落地定格','分組互相欣賞'],flex:'完整柔韌收操，回顧科學伸展原則。',g:'「迷你體操小展演」：每人／每組展示組合，同學鼓掌；發「技能護照」回顧成長。',cues:['沿用前述 spotting','按個人能力給不同難度，人人有成功經驗'],s:'動作串連訓練序列記憶與流暢度；公開完成小展示直接培養信心與成就感，呼應課程目標。'}
+    ],
+    refs:[
+      {title:'Gymnastics: Keeping the Sport Safe & Fun for Kids — HealthyChildren.org（美國兒科學會 AAP）',url:'https://www.healthychildren.org/English/healthy-living/sports/Pages/Gymnastics.aspx',type:'安全指引'},
+      {title:'Gymnastics Injury Prevention — OrthoInfo（美國骨科醫學會 AAOS）',url:'https://orthoinfo.aaos.org/en/staying-healthy/gymnastics-injury-prevention',type:'醫學防傷'},
+      {title:'Gymnast’s Wrist — Boston Children’s Hospital（手腕保護）',url:'https://www.childrenshospital.org/conditions-treatments/gymnasts-wrist',type:'醫學參考'},
+      {title:'Sports Injury Prevention: Gymnastics — Boston Children’s Hospital',url:'https://www.childrenshospital.org/sports-injury-prevention/gymnastics',type:'醫學防傷'},
+      {title:'How to Do a Cartwheel（分解進程＋影片）— GymnasticsHQ',url:'https://gymnasticshq.com/how-to-do-a-cartwheel/',type:'教學影片'}
+    ]}
+};
+const ORDER=['bad','pkl','bball','ath','gym'];
+
+function esc(s){return String(s);}
+function lessonHTML(L,color){
+  const arr=v=>Array.isArray(v)?('<ul>'+v.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>'):esc(v);
+  const cues=(L.cues||[]).map(c=>'<span class="cue">'+esc(c)+'</span>').join('');
+  return `<div class="row"><div class="k">學習目標</div><div class="v">${esc(L.o)}</div></div>
+    <div class="row"><div class="k">熱身</div><div class="v">${esc(L.w)}</div></div>
+    <div class="row"><div class="k">主要內容</div><div class="v">${arr(L.m)}</div></div>
+    ${L.flex?`<div class="row"><div class="k">柔韌訓練</div><div class="v">${esc(L.flex)}</div></div>`:''}
+    <div class="row"><div class="k">趣味遊戲</div><div class="v">${esc(L.g)}</div></div>
+    <div class="row"><div class="k">教練要點</div><div class="v">${cues}</div></div>
+    <div class="row sci"><div class="k">科學原理</div><div class="v">${esc(L.s)}</div></div>`;
+}
+function render(key){
+  const D=DATA[key], T=THEME[key];
+  document.documentElement.style.setProperty('--teal', T.c);
+  const chips=D.chips.map(c=>'<span class="chip">'+c+'</span>').join('');
+  const safety='<ul>'+D.safety.map(s=>'<li>'+s+'</li>').join('')+'</ul>';
+  const lessons=D.lessons.map((L,i)=>`<div class="lesson" onclick="this.classList.toggle('open')">
+      <div class="lh"><div class="num" style="background:${T.c}">${i+1}</div>
+        <div class="lt">${L.t}<small>${L.sub||''}</small></div></div>
+      <div class="det">${lessonHTML(L,T.c)}</div></div>`).join('');
+  const refs=D.refs.map(r=>`<a href="${r.url}" target="_blank" rel="noopener">
+      <div class="rt"><div class="rtitle">${r.title}</div><div class="rurl">${r.url}</div></div>
+      <div class="badge">${r.type}</div></a>`).join('');
+  document.getElementById('content').innerHTML=`
+    <div class="sp-head" style="background:${T.g}">
+      <div class="sp-fw">${D.framework}</div>
+      <h2>${D.emoji} 暑期${D.name}班</h2>
+      <div class="chips">${chips}</div>
+    </div>
+    <div class="sec"><h3>📘 課程理念與科學原理</h3><p>${D.intro}</p></div>
+    ${D.note?`<div class="sec" style="border-color:${T.c}"><h3>👥 分層教學（照顧年齡跨度）</h3><p>${D.note}</p></div>`:''}
+    <details><summary>🦺 安全與器材</summary><div class="body">${safety}</div></details>
+    <details><summary>📝 評估方式</summary><div class="body">${D.assess}</div></details>
+    <div class="lessons-h">📅 7 節課表</div>
+    ${lessons}
+    <div class="lessons-h">🔗 參考資料（已查證）</div>
+    <div class="refs">${refs}</div>`;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function buildTabs(){
+  const t=document.getElementById('tabs');
+  t.innerHTML=ORDER.map(k=>`<div class="tab" data-k="${k}" onclick="selectTab('${k}')">${DATA[k].emoji} ${DATA[k].name}</div>`).join('');
+}
+function selectTab(k){
+  document.querySelectorAll('.tab').forEach(el=>{
+    const on=el.dataset.k===k; el.classList.toggle('on',on);
+    el.style.background=on?THEME[k].c:'#fff'; el.style.borderColor=on?'transparent':'';
+  });
+  render(k);
+}
+buildTabs();
+selectTab('bad');
+</script>
+</body>
+</html>
